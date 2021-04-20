@@ -1,24 +1,3 @@
-# README
+remaining_supplementsは、定量摂取しているサプリメントの残量とリマインドを管理するサービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+内容量と1日あたりの摂取量を設定することで、サプリメントがなくなる日がわかり、なくなる前にリマインドを設定することで買い忘れを防止してくれます。
