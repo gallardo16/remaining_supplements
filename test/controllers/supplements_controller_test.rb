@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class SupplementsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
@@ -20,5 +20,4 @@ class SupplementsControllerTest < ActionDispatch::IntegrationTest
     get supplements_destroy_url
     assert_response :success
   end
-
 end
