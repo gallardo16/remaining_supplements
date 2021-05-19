@@ -8,7 +8,15 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-  .container
-    - if flash.notice.present?
-      .alert.alert-success= flash.notice
+    header
+      nav
+        - if user_signed_in?
+          = link_to 'プロフィール変更', edit_user_registration_path, class: 'nav-link'
+          = link_to  'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
+        - else
+          = link_to 'サインアップ', new_user_registration_path, class: 'nav-link'
+          = link_to 'ログイン', new_user_session_path, class: 'nav-link'
+    .container
+      - if flash.notice.present?
+        .alert.alert-success= flash.notice
     = yield
