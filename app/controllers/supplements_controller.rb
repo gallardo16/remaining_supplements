@@ -10,7 +10,7 @@ class SupplementsController < ApplicationController
   def create
     supplement = Supplement.new(supplement_params)
     supplement.save!
-    redirect_to root_path, notice: "サプリメント「#{supplement.name}」を登録しました。"
+    redirect_to supplements_path, notice: "サプリメント「#{supplement.name}」を登録しました。"
   end
 
   def edit
@@ -20,13 +20,13 @@ class SupplementsController < ApplicationController
   def update
     supplement = Supplement.find(params[:id])
     supplement.update!(supplement_params)
-    redirect_to root_path, notice: "サプリメント「#{supplement.name}」 を更新しました。"
+    redirect_to supplements_path, notice: "サプリメント「#{supplement.name}」 を更新しました。"
   end
 
   def destroy
     supplement = Supplement.find(params[:id])
     supplement.destroy
-    redirect_to root_path, notice: "タスク「#supplement.name」を削除しました。"
+    redirect_to supplements_path, notice: "タスク「#supplement.name」を削除しました。"
   end
 
   private
