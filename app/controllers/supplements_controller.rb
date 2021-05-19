@@ -1,4 +1,6 @@
 class SupplementsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @supplements = Supplement.all
   end
