@@ -15,8 +15,8 @@ table.table.table-hover
       - @supplements.each do |supplement|
         tr
           td= supplement.name
-          td= supplement.name
-          td= supplement.name
+          td= supplement.remaining_quantity
+          td= supplement.empty_date
           td= supplement.remind
           td
             = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
