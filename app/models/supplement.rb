@@ -1,4 +1,6 @@
 class Supplement < ApplicationRecord
+  belongs_to :user
+
   def remaining_quantity
     content_size - total_intake.to_i
   end
