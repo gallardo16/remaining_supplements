@@ -18,5 +18,5 @@
     = f.number_field :daily_intake, class: 'form-control', id: 'daily_intake'
   .form-group
     = f.label :remind
-    = f.select :remind, {'リマインドなし': 1, '1日前': 2, '2日前': 3, '3日前': 4, '5日前': 5, '1週間前': 6, '10日前': 7, '2週間前': 8 }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
+    = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日目前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
   =f.submit nil, class: 'btn btn-primary'
