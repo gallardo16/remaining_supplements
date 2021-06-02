@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  root 'supplements#index'
+  root 'home#index'
+
+  get 'home', to: 'home#index'
   resources :supplements
 end
