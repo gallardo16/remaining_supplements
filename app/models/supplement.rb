@@ -21,10 +21,10 @@ class Supplement < ApplicationRecord
   end
 
   def day_of_keep_taking_supplement
-    Date.today.strftime('%F').to_i - updated_at.strftime('%F').to_i
+    (Date.today - registration_date).to_i
   end
 
   def empty_date
-    updated_at.next_day(content_size / daily_intake).strftime('%F')
+    registration_date.next_day(content_size / daily_intake)
   end
 end
