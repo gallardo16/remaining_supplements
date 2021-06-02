@@ -3,13 +3,13 @@
     = f.label :name
     = f.text_field :name, class: 'form-control', id: 'supplements_name'
   .form-group
-    = f.label :sapplement_type
+    = f.label :supplement_type
     .form-check
       = f.radio_button 'supplement_type', 'tablet'
       = f.label :tablet
     .form-check
       = f.radio_button 'supplement_type', 'powder'
-      = f.label :pawder
+      = f.label :powder
   .form-group
     = f.label :content_size
     = f.number_field :content_size, class: 'form-control', id: 'content_size'
@@ -18,7 +18,7 @@
     = f.number_field :daily_intake, class: 'form-control', id: 'daily_intake'
   .form-group
     = f.label :remind
-    = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日目前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
+    = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
   .form-group
     = f.label :registration_date
     = f.date_select :registration_date, class: 'form-control', id: 'registration_date'
