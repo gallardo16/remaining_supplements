@@ -1,27 +1,31 @@
 h1 登録されたサプリメント
 
+- if @supplements.empty?
+  h3 サプリを登録してみよう!!
+
 = link_to 'サプリを追加する', new_supplement_path, class: 'btn btn-primary'
 
-.mb-3
-table.table.table-hover
-  thread.thread-default
-    tr
-      th= "name"
-      th= "remain"
-      th= "empty_day"
-      th= "remind"
-      th
-    tbody
-      - @supplements.each do |supplement|
-        tr
-          td= supplement.name
-          td
-            - if supplement.supplement_type == "tablet"
-              = supplement.remaining_quantity.to_s + "(錠)"
-            - elsif supplement.supplement_type == "powder"
-              = supplement.remaining_quantity.to_s + "(g)"
-          td= supplement.empty_date
-          td= supplement.remind
-          td
-            = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
-            = link_to '削除', supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}
+- if @supplements.exists?
+  .mb-3
+  table.table.table-hover
+    thread.thread-default
+      tr
+        th= "name"
+        th= "remain"
+        th= "empty_day"
+        th= "remind"
+        th
+      tbody
+        - @supplements.each do |supplement|
+          tr
+            td= supplement.name
+            td
+              - if supplement.supplement_type == "tablet"
+                = supplement.remaining_quantity.to_s + "(錠)"
+              - elsif supplement.supplement_type == "powder"
+                = supplement.remaining_quantity.to_s + "(g)"
+            td= supplement.empty_date
+            td= supplement.remind
+            td
+              = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
+              = link_to '削除', supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}
