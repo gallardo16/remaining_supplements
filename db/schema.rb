@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_06_02_114426) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
-    t.date "registration_date", null: false
     t.index ["user_id"], name: "index_supplements_on_user_id"
   end
 
