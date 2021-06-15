@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_102801) do
+ActiveRecord::Schema.define(version: 2021_06_02_114426) do
 
   create_table "supplements", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "supplement_type", null: false
+    t.string "supplement_type", null: false
     t.integer "content_size", null: false
     t.integer "daily_intake", null: false
     t.integer "remind", null: false

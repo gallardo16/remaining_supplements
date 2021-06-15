@@ -10,6 +10,7 @@ table.table.table-hover
       th= "remain"
       th= "empty_day"
       th= "remind"
+      th= "supplement_type"
       th
     tbody
       - @supplements.each do |supplement|
@@ -18,6 +19,7 @@ table.table.table-hover
           td= supplement.remaining_quantity
           td= supplement.empty_date
           td= supplement.remind
+          td= supplement.supplement_type
           td
             = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
             = link_to '削除', supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}
