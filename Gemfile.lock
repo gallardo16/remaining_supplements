@@ -89,6 +89,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.4)
+      devise (>= 4.7.1)
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.0)
@@ -270,6 +272,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  devise-i18n
   html2slim
   jbuilder (~> 2.7)
   listen (~> 3.2)
