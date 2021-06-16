@@ -17,15 +17,25 @@ h1= t ".title"
         th
       tbody
         - @supplements.each do |supplement|
-          tr
-            td= supplement.name
+          - if supplement.remaining_quantity <= 0
+            td= supplement.name + "の残量はありません。"
             td
-              - if supplement.supplement_type == "tablet"
-                = supplement.remaining_quantity.to_s + "(錠)"
-              - elsif supplement.supplement_type == "powder"
-                = supplement.remaining_quantity.to_s + "(g)"
-            td= supplement.empty_date
-            td= supplement.remind
+            td
+            td
             td
               = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
               = link_to '削除', supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}
+
+          - else
+            tr
+              td= supplement.name
+              td
+                - if supplement.supplement_type == "tablet"
+                  = supplement.remaining_quantity.to_s + "(錠)"
+                - elsif supplement.supplement_type == "powder"
+                  = supplement.remaining_quantity.to_s + "(g)"
+              td= supplement.empty_date
+              td= supplement.remind
+              td
+                = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
+                = link_to '削除', supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}
