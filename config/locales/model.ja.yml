@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      supplements: サプリメント
+    attributes:
+      supplement:
+        name: サプリ名
+        remain: 残り
+        empty_day: なくなる日
+        remind: リマインド

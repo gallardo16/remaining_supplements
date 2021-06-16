@@ -1,0 +1,9 @@
+ja:
+  supplements:
+    index:
+      title: サプリメント一覧
+    new:
+      title: サプリメント追加
+    edit:
+      title: サプリメント編集
+

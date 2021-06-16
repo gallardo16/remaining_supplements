@@ -1,4 +1,4 @@
-h1 登録されたサプリメント
+h1= t ".title"
 
 - if @supplements.empty?
   h3 サプリを登録してみよう!!
@@ -10,10 +10,10 @@ h1 登録されたサプリメント
   table.table.table-hover
     thread.thread-default
       tr
-        th= "name"
-        th= "remain"
-        th= "empty_day"
-        th= "remind"
+        th= t("supplement.name")
+        th= t("supplement.remain")
+        th= t("supplement.empty_day")
+        th= t("supplement.remind")
         th
       tbody
         - @supplements.each do |supplement|
