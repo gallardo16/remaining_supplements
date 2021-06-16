@@ -28,7 +28,7 @@ class SupplementsController < ApplicationController
   def destroy
     supplement = current_user.supplements.find(params[:id])
     supplement.destroy
-    redirect_to supplements_path, notice: "タスク「#supplement.name」を削除しました。"
+    redirect_to supplements_path, notice: "タスク「#{supplement.name}」を削除しました。"
   end
 
   private
