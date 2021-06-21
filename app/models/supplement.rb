@@ -12,16 +12,16 @@ class Supplement < ApplicationRecord
     "2週間前": 7
   }
 
-  def remaining_quantity
-    content_size - total_intake.to_i
+  def keep_taking_days
+    (Date.today.strftime('%F').to_i - created_at.strftime('%F').to_i) + 1
   end
 
   def total_intake
-    day_of_keep_taking_supplement * daily_intake
+    (keep_taking_days * daily_intake).to_i
   end
 
-  def day_of_keep_taking_supplement
-    Date.today.strftime('%F').to_i - created_at.strftime('%F').to_i
+  def remaining_quantity
+    content_size - total_intake
   end
 
   def empty_date
