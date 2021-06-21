@@ -10,9 +10,14 @@
     .form-check
       = f.radio_button 'supplement_type', 'powder'
       = f.label t("supplement.powder")
-  .form-group
-    = f.label t("supplement.content_size")
-    = f.number_field :content_size, class: 'form-control', id: 'content_size'
+  - if request.path == '/supplements/new'
+    .form-group
+      = f.label t("supplement.content_size")
+      = f.number_field :content_size, class: 'form-control', id: 'content_size'
+  - else
+    .form-group
+      = f.label :残量
+      = f.number_field :content_size, class: 'form-control', value: supplement.remaining_quantity
   .form-group
     = f.label t("supplement.daily_intake")
     = f.number_field :daily_intake, class: 'form-control', id: 'daily_intake'
