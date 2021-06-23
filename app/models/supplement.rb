@@ -13,7 +13,7 @@ class Supplement < ApplicationRecord
   }
 
   def keep_taking_days
-    (Date.today.strftime('%F').to_i - created_at.strftime('%F').to_i) + 1
+    ((Time.current - created_at) / 1.day).to_i + 1
   end
 
   def total_intake
