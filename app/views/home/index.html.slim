@@ -2,4 +2,5 @@ h1 Remaining supplements
 
 p サプリメントの内容量と1日あたりの摂取量を設定するだけで、いつなくなるのか一目瞭然！！さらに、リマインドも設定可能！！
 
-= link_to 'アカウントを作成して始める', new_user_registration_path, class: 'btn btn-primary'
+- if !user_signed_in?
+  = link_to 'アカウントを作成して始める', new_user_registration_path, class: 'btn btn-primary'
