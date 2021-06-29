@@ -20,10 +20,6 @@ class Supplement < ApplicationRecord
     (keep_taking_days * daily_intake).to_i
   end
 
-  def remaining_quantity
-    content_size - total_intake
-  end
-
   def empty_date
     created_at.next_day(content_size / daily_intake).strftime('%F')
   end

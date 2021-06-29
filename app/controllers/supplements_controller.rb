@@ -11,6 +11,7 @@ class SupplementsController < ApplicationController
 
   def create
     supplement = current_user.supplements.new(supplement_params)
+    supplement.remaining_quantity = supplement.content_size
     supplement.save!
     redirect_to supplements_path, notice: "サプリメント「#{supplement.name}」を登録しました。"
   end
