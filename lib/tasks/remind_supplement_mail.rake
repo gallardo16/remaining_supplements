@@ -1,9 +1,11 @@
 desc "This task is called by Heroku schduler add-on"
-task :remind_mail_of_supplement => :environmeint do
+task :remind_mail_of_supplement => :environment do
   users = User.all
   users.each do |user|
     user.supplements.each do |supplement|
-      supplement_remind = Supplement.reminds[supplement.remind]
+      if supplement.remind_day == Date.today
+        RemaindSupplementsMailer.remind_supplement(user, supplement).deliver
+      end
     end
   end
 end
