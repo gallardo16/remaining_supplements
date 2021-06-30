@@ -45,6 +45,7 @@ group :development do
   gem "rubocop-performance"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :test do
@@ -65,3 +66,4 @@ gem "devise"
 gem "pry-rails"
 gem "rails-i18n"
 gem "devise-i18n"
+gem "dotenv-rails"
