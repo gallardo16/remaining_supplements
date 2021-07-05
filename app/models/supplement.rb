@@ -24,7 +24,7 @@ class Supplement < ApplicationRecord
   }.freeze
 
   def empty_date_and_time
-    created_at.next_day(content_size / daily_intake)
+    created_at.next_day(remaining_quantity / daily_intake)
   end
 
   def empty_date
