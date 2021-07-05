@@ -16,8 +16,8 @@
       = f.number_field :content_size, class: 'form-control', id: 'content_size'
   - else
     .form-group
-      = f.label :残量
-      = f.number_field :content_size, class: 'form-control', value: supplement.remaining_quantity
+      = f.label '残量(内容量を変更したい場合は残量に加えたい分を足して入力してください)'
+      = f.number_field :remaining_quantity, class: 'form-control', id: 'remaining_quantity'
   .form-group
     = f.label t("supplement.daily_intake")
     = f.number_field :daily_intake, class: 'form-control', id: 'daily_intake'
