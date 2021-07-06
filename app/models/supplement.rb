@@ -23,16 +23,8 @@ class Supplement < ApplicationRecord
     7 => 14,
   }.freeze
 
-  def keep_taking_days
-    ((Time.current - created_at) / 1.day).to_i + 1
-  end
-
-  def total_intake
-    (keep_taking_days * daily_intake).to_i
-  end
-
   def empty_date_and_time
-    created_at.next_day(content_size / daily_intake)
+    created_at.next_day(remaining_quantity / daily_intake)
   end
 
   def empty_date
