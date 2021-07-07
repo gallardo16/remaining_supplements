@@ -1,41 +1,38 @@
 h1= t ".title"
 
 - if @supplements.empty?
-  h3 サプリを登録してみよう!!
+  .empty-list
+    h3 サプリを登録してみよう!!
 
-= link_to 'サプリを追加する', new_supplement_path, class: 'btn btn-primary'
+= link_to new_supplement_path, class: 'btn btn-add btn-radius' do
+  | サプリメント追加
+.supplements-list
+  - @supplements.each do |supplement|
+    .supplement-item
+      input.acd-check id="#{supplement.id}" type="checkbox"
+      label.acd-label for="#{supplement.id}"
+          .item_row
+            h4= supplement.name
+          .item_row
+             - if supplement.supplement_type == "tablet"
+               | 残り: #{supplement.remaining_quantity}(錠)
+             - elsif supplement.supplement_type == "powder"
+               | 残り: #{supplement.remaining_quantity}(g)
 
-- if @supplements.exists?
-  .mb-3
-  table.table.table-hover
-    thread.thread-default
-      tr
-        th= t("supplement.name")
-        th= t("supplement.remain")
-        th= t("supplement.empty_day")
-        th= t("supplement.remind")
-        th
-      tbody
-        - @supplements.each do |supplement|
-          - if supplement.remaining_quantity <= 0
-            td= supplement.name + "の残量はありません。"
-            td
-            td
-            td
-            td
-              = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
-              = link_to '削除', supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}
-
-          - else
-            tr
-              td= supplement.name
-              td
-                - if supplement.supplement_type == "tablet"
-                  = supplement.remaining_quantity.to_s + "(錠)"
-                - elsif supplement.supplement_type == "powder"
-                  = supplement.remaining_quantity.to_s + "(g)"
-              td= supplement.empty_date
-              td= supplement.remind
-              td
-                = link_to '編集', edit_supplement_path(supplement), class: 'btn btn-primary mr-3'
-                = link_to '削除', supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}
+      .acd-content
+        .item-rows
+          .item-row
+            | なくなる日: #{supplement.empty_date}
+          .item_row
+            | リマインド: #{supplement.remind} (#{supplement.remind_date})
+          .item-row
+            | 1日あたりの摂取量: #{supplement.daily_intake}
+            - if supplement.supplement_type == "tablet"
+              | (錠)
+            - elsif supplement.supplement_type == "powder"
+              | (g)
+          .item-row
+            = link_to edit_supplement_path(supplement), class: 'btn btn-edit' do
+              | 編集
+            = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-destroy' do
+              | 削除

@@ -1,3 +1,78 @@
-// Place all the styles related to the supplements controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.supplements-list{
+  width: 500px;
+  margin: 10px;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.supplement-item{
+  border-bottom: 2px solid;
+}
+
+.btn-add {
+  width: 500px;
+  border: 3px solid #111111;
+  color: #111;
+  background-color: #fff;
+}
+
+.btn-add:hover{
+  color: #111;
+  background-color: #75A9FF
+}
+
+.btn-edit{
+  height: 40px;
+  margin: 10px;
+  color: #111;
+  border: 1px solid #111;
+  background-color: #fff;
+}
+
+.btn-edit:hover{
+  color: #111;
+  background-color: #75A9FF;
+}
+
+.btn-destroy{
+  height: 40px;
+  margin: 10px;
+  color: #111;
+  border: 1px solid #111;
+  background-color: #fff;
+}
+
+.btn-destroy:hover{
+  color: #111;
+  background-color: #FF5192;
+}
+
+.btn-radius {
+  border-radius: 30px;
+}
+
+.acd-check{
+  display: none;
+}
+
+.acd-label{
+  background: #fff;
+  color: #black;
+  display: block;
+  margin-bottom: 1px;
+  padding: 10px;
+}
+.acd-content{
+  background: #fff;
+  border-top: 1px dashed;
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  visibility: hidden;
+}
+.acd-check:checked + .acd-label + .acd-content{
+  height: 140px;
+  opacity: 1;
+  padding: 10px;
+  visibility: visible;
+}
