@@ -1,6 +1,16 @@
-h1 Remaining supplements
+h1.title Remaining supplements
 
-p サプリメントの内容量と1日あたりの摂取量を設定するだけで、いつなくなるのか一目瞭然！！さらに、リマインドも設定可能！！
+.description
+  | サプリメントの内容量と1日あたりの摂取量を設定するだけで、いつなくなるのか一目瞭然！！
+  br
+  |さらに、リマインドも設定可能！！
 
-- if !user_signed_in?
-  = link_to 'アカウントを作成して始める', new_user_registration_path, class: 'btn btn-primary'
+
+p サンプル画像
+
+- if user_signed_in?
+  = link_to supplements_path, class: 'btn btn-to-supplements'
+    | サプリメント一覧へ
+- else
+  = link_to new_user_registration_path, class: 'btn btn-user-create'
+    | アカウントを作成して始める
