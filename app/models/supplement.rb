@@ -31,7 +31,7 @@ class Supplement < ApplicationRecord
     empty_date_and_time.strftime('%F')
   end
 
-  def remind_day
+  def remind_date
     enum_remind_number = Supplement.reminds[self.remind]
     if enum_remind_number == 0
       nil
