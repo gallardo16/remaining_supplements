@@ -9,15 +9,24 @@ body{
 
 header{
   background: #8EB8FF;
+  height: 60px;
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-name{
+  padding: 5px;
 }
 
 .nav-items{
-  text-align:right;
-  vertical-align: center;
+  display: flex;
 }
 
 .nav-item{
-  font-size: 20px;
+  font-size: 16px;
   color: #111;
   margin: 15px;
 }
