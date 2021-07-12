@@ -11,17 +11,20 @@ html
   body
     header
       nav
-        .nav-items
-          - if user_signed_in?
-            = link_to  edit_user_registration_path, class: 'nav-item' do
-              | プロフィール変更
-            = link_to destroy_user_session_path, method: :delete, class: 'nav-item' do
-              | ログアウト
-          - else
-            = link_to new_user_registration_path, class: 'nav-item' do
-              | サインアップ
-            = link_to new_user_session_path, class: 'nav-item' do
-              | ログイン
+        .nav-container
+          .app-name
+            h2  Remaining supplement
+          .nav-items
+            - if user_signed_in?
+              = link_to  edit_user_registration_path, class: 'nav-item' do
+                | プロフィール変更
+              = link_to destroy_user_session_path, method: :delete, class: 'nav-item' do
+                | ログアウト
+            - else
+              = link_to new_user_registration_path, class: 'nav-item' do
+                | サインアップ
+              = link_to new_user_session_path, class: 'nav-item' do
+                | ログイン
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice

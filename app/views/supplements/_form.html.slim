@@ -1,27 +1,40 @@
-= form_with model: supplement, local: true do |f|
-  .form-group
-    = f.label t("supplement.name")
-    = f.text_field :name, class: 'form-control', id: 'supplements_name'
-  .form-group
-    = f.label t("supplement.supplement_type")
-    .form-check
-      = f.radio_button 'supplement_type', 'tablet'
-      = f.label t("supplement.tablet")
-    .form-check
-      = f.radio_button 'supplement_type', 'powder'
-      = f.label t("supplement.powder")
-  - if request.path == '/supplements/new'
-    .form-group
-      = f.label t("supplement.content_size")
-      = f.number_field :content_size, class: 'form-control', id: 'content_size'
-  - else
-    .form-group
-      = f.label '内容量(現在の残量に加える分を足して入力してください)'
-      = f.number_field :remaining_quantity, class: 'form-control', id: 'remaining_quantity'
-  .form-group
-    = f.label t("supplement.daily_intake")
-    = f.number_field :daily_intake, class: 'form-control', id: 'daily_intake'
-  .form-group
-    = f.label t("supplement.remind")
-    = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
-  =f.submit nil, class: 'btn btn-primary'
+.form-items
+  = form_with model: supplement, local: true do |f|
+    .form-group.form-item
+      .form-label
+        = f.label t("supplement.name")
+      .form-name-input
+        = f.text_field :name, class: 'form-control', id: 'supplements_name'
+    .form-group.form-item
+      .form-label
+        = f.label t("supplement.supplement_type")
+      .form-check.form-radio-items
+        = f.radio_button 'supplement_type', 'tablet'
+        = f.label t("supplement.tablet")
+      .form-check.form-radio-items
+        = f.radio_button 'supplement_type', 'powder'
+        = f.label t("supplement.powder")
+    - if request.path == '/supplements/new'
+      .form-group.form-item
+        .form-label
+          = f.label t("supplement.content_size")
+        .form-number-input
+          = f.number_field :content_size, class: 'form-control', id: 'content_size'
+    - else
+      .form-group.form-item
+        .form-label
+          = f.label '内容量(現在の残量に加える分を足して入力してください)'
+        .form-number-input
+          = f.number_field :remaining_quantity, class: 'form-control', id: 'remaining_quantity'
+    .form-group.form-item
+      .form-label
+        = f.label t("supplement.daily_intake")
+      .form-number-input
+        = f.number_field :daily_intake, class: 'form-control', id: 'daily_intake'
+    .form-group.form-item
+      .form-label
+        = f.label t("supplement.remind")
+      .form-select-tab
+        = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
+    =f.submit nil, class: 'btn btn-primary form-btn' do
+    = link_to 'キャンセル', supplements_path, class: 'form-btn'
