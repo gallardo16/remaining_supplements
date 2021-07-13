@@ -6,10 +6,18 @@
   display: flex;
 }
 
-.form-number-input, .form-select-tab{
+.form-number-input,
+.form-select-tab,
+.form-email-input,
+.form-password-input
+{
   width: 250px;
 }
 
 .form-btn{
   margin: 20px;
+}
+
+.link-btn{
+  margin: 20px 0;
 }
