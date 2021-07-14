@@ -1,39 +1,46 @@
 .page-title
-  h3= t ".title"
+  h4= t ".title"
+
+.btn-add
+  = link_to new_supplement_path, class: 'btn' do
+    | サプリメント追加
 
 - if @supplements.empty?
   .empty-list
-    h3 サプリを登録してみよう!!
+    | サプリメントを追加する場合は上にある「サプリメント追加」を押してください
+    br
+    |
+    br
+    |  サプリメントの追加方法や仕様についてはヘルプを押してみてください
 
-= link_to new_supplement_path, class: 'btn btn-add btn-radius' do
-  | サプリメント追加
-.supplements-list
-  - @supplements.each do |supplement|
-    .supplement-item
-      input.acd-check id="#{supplement.id}" type="checkbox"
-      label.acd-label for="#{supplement.id}"
-          .item_row
-            h4= supplement.name
-          .item_row
-             - if supplement.supplement_type == "tablet"
-               | 残り: #{supplement.remaining_quantity}(錠)
-             - elsif supplement.supplement_type == "powder"
-               | 残り: #{supplement.remaining_quantity}(g)
+- if @supplements.exists?
+  .supplements-list
+    - @supplements.each do |supplement|
+      .supplement-item
+        input.acd-check id="#{supplement.id}" type="checkbox"
+        label.acd-label for="#{supplement.id}"
+            .item_row
+              h4= supplement.name
+            .item_row
+               - if supplement.supplement_type == "tablet"
+                 | 残り: #{supplement.remaining_quantity}(錠)
+               - elsif supplement.supplement_type == "powder"
+                 | 残り: #{supplement.remaining_quantity}(g)
 
-      .acd-content
-        .item-rows
-          .item-row
-            | なくなる日: #{supplement.empty_date}
-          .item_row
-            | リマインド: #{supplement.remind} (#{supplement.remind_date})
-          .item-row
-            | 1日あたりの摂取量: #{supplement.daily_intake}
-            - if supplement.supplement_type == "tablet"
-              | (錠)
-            - elsif supplement.supplement_type == "powder"
-              | (g)
-          .item-row
-            = link_to edit_supplement_path(supplement), class: 'btn btn-edit' do
-              | 編集
-            = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-destroy' do
-              | 削除
+        .acd-content
+          .item-rows
+            .item-row
+              | なくなる日: #{supplement.empty_date}
+            .item_row
+              | リマインド: #{supplement.remind} (#{supplement.remind_date})
+            .item-row
+              | 1日あたりの摂取量: #{supplement.daily_intake}
+              - if supplement.supplement_type == "tablet"
+                | (錠)
+              - elsif supplement.supplement_type == "powder"
+                | (g)
+            .item-row
+              = link_to edit_supplement_path(supplement), class: 'btn btn-edit' do
+                | 編集
+              = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-destroy' do
+                | 削除

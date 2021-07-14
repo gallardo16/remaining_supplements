@@ -1,19 +1,29 @@
 .supplements-list{
-  width: 500px;
-  margin: 10px;
+  width: 80%;
+  margin: 20px auto;
   border-width: 3px;
   border-style: solid;
 }
 
 .supplement-item{
-  border-bottom: 2px solid;
+  border-bottom: 4px solid;
+}
+
+.empty-list{
+  margin: 30px;
+  padding: 10px;
+  border: 2px dashed #9057FF;
+  border-radius: 10px;
 }
 
 .btn-add {
-  width: 500px;
-  border: 3px solid #111111;
+  margin: 20px auto;
+  text-align: center;
+  width: 200px;
   color: #111;
   background-color: #fff;
+  border: 3px solid #111111;
+  border-radius: 30px;
 }
 
 .btn-add:hover{
@@ -45,10 +55,6 @@
 .btn-destroy:hover{
   color: #111;
   background-color: #FF5192;
-}
-
-.btn-radius {
-  border-radius: 30px;
 }
 
 .acd-check{
