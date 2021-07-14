@@ -1,11 +1,8 @@
-.form-name-input{
-  width: 300px;
-}
-
 .form-radio-items{
   display: flex;
 }
 
+.form-name-input,
 .form-number-input,
 .form-select-tab,
 .form-email-input,
@@ -20,4 +17,18 @@
 
 .link-btn{
   margin: 20px 0;
+}
+
+@media (max-width: 767.98px) {
+  .form-name-input,
+  .form-number-input,
+  .form-select-tab,
+  .form-email-input,
+  .form-password-input{
+    width: 100%;
+  }
+
+  .form-btn{
+    margin: 20px 10px;
+  }
 }
