@@ -22,39 +22,26 @@
   width: 200px;
   color: #111;
   background-color: #fff;
-  border: 3px solid #111111;
+  border: 3px solid #333333;
   border-radius: 30px;
 }
 
-.btn-add:hover{
-  color: #111;
-  background-color: #75A9FF
-}
-
 .btn-edit{
+  font-size: 18px;
   height: 40px;
   margin: 10px;
   color: #111;
-  border: 1px solid #111;
-  background-color: #fff;
-}
-
-.btn-edit:hover{
-  color: #111;
-  background-color: #75A9FF;
+  border: 1px solid #BBBBBB;
+  background-color: #FFFFFF;
 }
 
 .btn-destroy{
+  font-size: 18px;
   height: 40px;
   margin: 10px;
-  color: #111;
-  border: 1px solid #111;
-  background-color: #fff;
-}
-
-.btn-destroy:hover{
-  color: #111;
-  background-color: #FF5192;
+  color: #FF3300;
+  border: 1px solid #BBBBBB;
+  background-color: #FFFFFF;
 }
 
 .acd-check{
@@ -62,11 +49,12 @@
 }
 
 .acd-label{
+  height: 65px;
   background: #fff;
-  color: #black;
+  color: black;
   display: block;
   margin-bottom: 1px;
-  padding: 10px;
+  padding: 5px;
 }
 .acd-content{
   background: #fff;
