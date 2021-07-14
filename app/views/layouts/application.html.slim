@@ -9,23 +9,9 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     meta content="width=device-width,initial-scale=1" name="viewport"
   body
-    header
-      nav
-        .nav-container
-          .app-name
-            h2  Remaining supplement
-          .nav-items
-            - if user_signed_in?
-              = link_to  edit_user_registration_path, class: 'nav-item' do
-                | プロフィール変更
-              = link_to destroy_user_session_path, method: :delete, class: 'nav-item' do
-                | ログアウト
-            - else
-              = link_to new_user_registration_path, class: 'nav-item' do
-                | アカウント登録
-              = link_to new_user_session_path, class: 'nav-item' do
-                | ログイン
+    = render 'layouts/header'
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice
     = yield
+    = render 'layouts/footer'
