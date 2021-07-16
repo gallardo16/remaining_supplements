@@ -6,18 +6,18 @@
     .form-group
       = f.label :email
       .form-email-input
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', id: 'email'
     .form-group
       = f.label :password
       - if @minimum_password_length
         em
           = t('devise.shared.minimum_password_length', count: @minimum_password_length)
       .form-password-input
-        = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+        = f.password_field :password, autocomplete: "new-password", class: 'form-control', id: 'password'
     .form-group
       = f.label :password_confirmation
       .form-password-input
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', id: 'password_confirmation'
     .actions
       = f.submit t('.sign_up'), class: 'btn btn-primary'
   = render "devise/shared/links"
