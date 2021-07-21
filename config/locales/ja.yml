@@ -2,13 +2,14 @@ ja:
   activerecord:
     models:
       supplements: サプリメント
-  supplement:
-    name: サプリ名
-    supplement_type: サプリのタイプ
-    tablet: 錠剤
-    powder: 粉類
-    content_size: 内容量
-    daily_intake: 1日当たりの摂取量
-    remain: 残り
-    empty_day: なくなる日
-    remind: リマインド
+    attributes:
+      supplement:
+        name: サプリ名
+        supplement_type: サプリのタイプ
+        tablet: 錠剤
+        powder: 粉類
+        content_size: 内容量
+        daily_intake: 1日当たりの摂取量
+        remaining_quantity: 残量
+        empty_day: なくなる日
+        remind: リマインド
