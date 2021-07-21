@@ -1,16 +1,16 @@
 .page-title
-  h3
-    = t('.sign_in')
+  h3= t('.sign_in')
 .form-items
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
     .form-group
       = f.label :email
       .form-email-input
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', id: 'email'
     .form-group
       = f.label :password
       .form-password-input
-        = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+        = f.password_field :password, autocomplete: "current-password", class: 'form-control', id: 'password'
     - if devise_mapping.rememberable?
       .form-group
         = f.check_box :remember_me
