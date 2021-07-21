@@ -65,7 +65,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
   describe 'アカウント情報変更' do
     before do
       FactoryBot.create(:user)
-      FactoryBot.create(:user, email: 'foofoo@example.com')
+      FactoryBot.create(:user, id: 2, email: 'foofoo@example.com')
       visit new_user_session_path
       fill_in 'email', with: 'test@example.com'
       fill_in 'password', with: 'testtest'
