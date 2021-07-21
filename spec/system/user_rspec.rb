@@ -62,9 +62,76 @@ RSpec.describe 'ユーザ管理機能', type: :system do
     end
   end
 
+  describe 'アカウント情報変更' do
+    before do
+      FactoryBot.create(:user)
+      FactoryBot.create(:user, email: 'foofoo@example.com')
+      visit new_user_session_path
+      fill_in 'email', with: 'test@example.com'
+      fill_in 'password', with: 'testtest'
+      click_button 'ログイン'
+      visit edit_user_registration_path
+    end
+    context '入力値が正しい場合' do
+      it 'メールアドレスを変更できる'do
+        fill_in 'email', with: 'new_test@example.com'
+        fill_in 'current_password', with: 'testtest'
+        click_button '更新'
+        expect(page).to have_content 'アカウント情報を変更しました。'
+      end
+
+      it 'パスワードを変更できる' do
+        fill_in 'password', with: 'newtesttest'
+        fill_in 'password_confirmation', with: 'newtesttest'
+        fill_in 'current_password', with: 'testtest'
+        click_button '更新'
+        expect(page).to have_content 'アカウント情報を変更しました。'
+      end
+
+      it 'アカウントを削除できる' do
+        click_button 'アカウント削除'
+        page.driver.browser.switch_to.alert.accept
+        expect(page).to have_content 'ログインもしくはアカウント登録してください。'
+      end
+    end
+
+    context '入力値が不正の場合' do
+      it '現在のパスワードが空欄の場合、無効である' do
+        fill_in 'password', with: 'newtesttest'
+        fill_in 'password_confirmation', with: 'newtesttest'
+        click_button '更新'
+        expect(page).to have_content '現在のパスワードを入力してください'
+
+      end
+
+      it '現在のパスワードが不一致の場合、無効である' do
+        fill_in 'password', with: 'newtesttest'
+        fill_in 'password_confirmation', with: 'newtesttest'
+        fill_in 'current_password', with: 'test'
+        click_button '更新'
+        expect(page).to have_content '現在のパスワードを入力してください'
+      end
+
+      it 'パスワード変更で確認用と不一致の場合、無効である' do
+        fill_in 'password', with: 'newtesttest'
+        fill_in 'password_confirmation', with: 'newtest'
+        fill_in 'current_password', with: 'testtest'
+        click_button '更新'
+        expect(page).to have_content 'パスワード（確認用）とパスワードの入力が一致しません'
+      end
+
+      it "重複したメールアドレスの場合、無効である" do
+        fill_in 'email', with: 'foofoo@example.com'
+        fill_in 'current_password', with: 'testtest'
+        click_button '更新'
+        expect(page).to have_content 'Eメールはすでに存在します'
+      end
+    end
+  end
+
   describe 'ログイン、ログアウト' do
     before do
-      user = FactoryBot.create(:user)
+      FactoryBot.create(:user)
     end
     context '入力値が正しい場合' do
       it 'ログインできる' do

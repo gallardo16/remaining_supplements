@@ -6,7 +6,7 @@
     .form-group
       = f.label :email
       .form-email-input
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', id: 'email'
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         | Currently waiting confirmation for: 
         = resource.unconfirmed_email
@@ -15,20 +15,20 @@
       i
         = t('.leave_blank_if_you_don_t_want_to_change_it')
       .form-password-input
-        = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+        = f.password_field :password, autocomplete: "new-password", class: 'form-control', id: 'password'
         - if @minimum_password_length
           em
             = t('devise.shared.minimum_password_length', count: @minimum_password_length)
     .form-group
       = f.label :password_confirmation
       .form-password-input
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', id: 'password_confirmation'
     .form-group
       = f.label :current_password
       i
         = t('.we_need_your_current_password_to_confirm_your_changes')
       .form-password-input
-        = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
+        = f.password_field :current_password, autocomplete: "current-password", class: 'form-control', id: 'current_password'
     .actions.form-btn
       = f.submit t('.update'), class: 'btn btn-primary'
     .form-btn
