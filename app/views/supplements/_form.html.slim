@@ -1,15 +1,20 @@
 .form-items
+  - if supplement.errors.present?
+    ul#error_explanation.error-container
+      - supplement.errors.full_messages.each do |message|
+        .error-word
+          li= message
   = form_with model: supplement, local: true do |f|
     .form-group.form-item
       .form-label
         = f.label t("supplement.name")
       .form-name-input
-        = f.text_field :name, class: 'form-control', id: 'supplements_name'
+        = f.text_field :name, class: 'form-control', id: 'name'
     .form-group.form-item
       .form-label
         = f.label t("supplement.supplement_type")
       .form-check.form-radio-items
-        = f.radio_button 'supplement_type', 'tablet'
+        = f.radio_button 'supplement_type', 'tablet', checked: true
         = f.label t("supplement.tablet")
       .form-check.form-radio-items
         = f.radio_button 'supplement_type', 'powder'

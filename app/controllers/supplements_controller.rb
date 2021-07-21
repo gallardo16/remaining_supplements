@@ -10,10 +10,13 @@ class SupplementsController < ApplicationController
   end
 
   def create
-    supplement = current_user.supplements.new(supplement_params)
-    supplement.remaining_quantity = supplement.content_size
-    supplement.save!
-    redirect_to supplements_path, notice: "サプリメント「#{supplement.name}」を登録しました。"
+    @supplement = current_user.supplements.new(supplement_params)
+    @supplement.remaining_quantity = @supplement.content_size
+    if @supplement.save
+      redirect_to supplements_path, notice: "サプリメント「#{@supplement.name}」を登録しました。"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -21,9 +24,12 @@ class SupplementsController < ApplicationController
   end
 
   def update
-    supplement = current_user.supplements.find(params[:id])
-    supplement.update!(supplement_params)
-    redirect_to supplements_path, notice: "サプリメント「#{supplement.name}」を更新しました。"
+    @supplement = current_user.supplements.find(params[:id])
+    if @supplement.update(supplement_params)
+      redirect_to supplements_path, notice: "サプリメント「#{@supplement.name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
