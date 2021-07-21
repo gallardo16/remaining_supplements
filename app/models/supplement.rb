@@ -1,5 +1,11 @@
 class Supplement < ApplicationRecord
   belongs_to :user
+  validates :name, presence: true
+  validates :supplement_type, presence: true
+  validates :content_size, presence: true
+  validates :remaining_quantity, presence: true
+  validates :daily_intake, presence: true
+  validates :remind, presence: true
 
   enum remind: {
     "リマインドなし": 0,
