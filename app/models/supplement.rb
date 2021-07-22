@@ -53,6 +53,6 @@ class Supplement < ApplicationRecord
   private
 
   def validate_content_size_more_than_daily_intake
-    errors.add(:content_size, 'は「1日の摂取量」以上にしてください') if content_size&. < daily_intake
+    errors.add(:content_size, 'は「1日の摂取量」以上にしてください') if content_size.to_i&. < daily_intake.to_i
   end
 end
