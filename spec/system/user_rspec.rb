@@ -8,7 +8,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         fill_in 'email', with: 'test@example.com'
         fill_in 'password', with: 'testtest'
         fill_in 'password_confirmation', with: 'testtest'
-        click_button 'アカウント登録'
+        click_button '登録する'
         expect(page).to have_content 'アカウント登録が完了しました。'
       end
     end
@@ -19,7 +19,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         fill_in 'email', with: ''
         fill_in 'password', with: 'testtest'
         fill_in 'password_confirmation', with: 'testtest'
-        click_button 'アカウント登録'
+        click_button '登録する'
         expect(page).to have_content 'Eメールを入力してください'
       end
 
@@ -28,7 +28,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         fill_in 'email', with: 'test@example.com'
         fill_in 'password', with: ''
         fill_in 'password_confirmation', with: ''
-        click_button 'アカウント登録'
+        click_button '登録する'
         expect(page).to have_content 'パスワードを入力してください'
       end
 
@@ -37,7 +37,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         fill_in 'email', with: 'test@example.com'
         fill_in 'password', with: 'test'
         fill_in 'password_confirmation', with: 'test'
-        click_button 'アカウント登録'
+        click_button '登録する'
         expect(page).to have_content 'パスワードは6文字以上で入力してください'
       end
 
@@ -46,7 +46,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         fill_in 'email', with: 'test@example.com'
         fill_in 'password', with: 'testtest'
         fill_in 'password_confirmation', with: 'testtesttest'
-        click_button 'アカウント登録'
+        click_button '登録する'
         expect(page).to have_content 'パスワード（確認用）とパスワードの入力が一致しません'
       end
 
@@ -56,7 +56,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         fill_in 'email', with: 'test@example.com'
         fill_in 'password', with: 'testtest'
         fill_in 'password_confirmation', with: 'testtest'
-        click_button 'アカウント登録'
+        click_button '登録する'
         expect(page).to have_content 'Eメールはすでに存在します'
       end
     end
@@ -65,7 +65,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
   describe 'アカウント情報変更' do
     before do
       FactoryBot.create(:user)
-      FactoryBot.create(:user, email: 'foofoo@example.com')
+      FactoryBot.create(:user, id: 2, email: 'foofoo@example.com')
       visit new_user_session_path
       fill_in 'email', with: 'test@example.com'
       fill_in 'password', with: 'testtest'
@@ -89,7 +89,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
       end
 
       it 'アカウントを削除できる' do
-        click_button 'アカウント削除'
+        click_button '削除する'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content 'ログインもしくはアカウント登録してください。'
       end
@@ -108,8 +108,8 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         fill_in 'password', with: 'newtesttest'
         fill_in 'password_confirmation', with: 'newtesttest'
         fill_in 'current_password', with: 'test'
-        click_button '更新'
-        expect(page).to have_content '現在のパスワードを入力してください'
+        click_button '更新する'
+        expect(page).to have_content '現在のパスワードは不正な値です'
       end
 
       it 'パスワード変更で確認用と不一致の場合、無効である' do
@@ -138,7 +138,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         visit new_user_session_path
         fill_in 'email', with: 'test@example.com'
         fill_in 'password', with: 'testtest'
-        click_button 'ログイン'
+        click_button 'ログインする'
         expect(page).to have_content 'ログインしました。'
       end
 
@@ -146,7 +146,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         visit new_user_session_path
         fill_in 'email', with: 'test@example.com'
         fill_in 'password', with: 'testtest'
-        click_button 'ログイン'
+        click_button 'ログインする'
         find('a', text: 'ログアウト').click
         expect(page).to have_content 'ログインもしくはアカウント登録してください。'
       end
@@ -157,7 +157,7 @@ RSpec.describe 'ユーザ管理機能', type: :system do
         visit new_user_session_path
         fill_in 'email', with: 'testtest@example.com'
         fill_in 'password', with: 'testtest'
-        click_button 'ログイン'
+        click_button 'ログインする'
         expect(page).to have_content 'Eメールまたはパスワードが違います。'
       end
     end

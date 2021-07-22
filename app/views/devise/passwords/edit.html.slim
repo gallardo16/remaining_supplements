@@ -1,20 +1,17 @@
 .page-title
-  h3= t('.change_your_password')
+  h3 パスワード変更
 .form-items
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
     = render "devise/shared/error_messages", resource: resource
     = f.hidden_field :reset_password_token
     .form-group
-      = f.label :password, t('.new_password')
-      - if @minimum_password_length
-      em
-        = t('devise.shared.minimum_password_length', count: @minimum_password_length)
+      = f.label :password, '新しいパスワード(6文字以上)'
       .form-password-input
         = f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'form-control'
     .form-group
-      = f.label :password_confirmation, t('.confirm_new_password')
+      = f.label :password_confirmation, '新しいパスワード(確認用)'
       .form-password-input
         = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
     .actions
-      = f.submit t('.change_my_password'), class: 'btn btn-primary'
+      = f.submit '変更する', class: 'btn btn-primary'
   = render "devise/shared/links"

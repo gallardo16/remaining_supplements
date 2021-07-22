@@ -1,5 +1,15 @@
 class Supplement < ApplicationRecord
   belongs_to :user
+  validates :name, presence: true
+  validates :supplement_type, presence: true
+  validates :content_size,
+    presence: true,
+    numericality: {greater_than: 0 }
+  validates :daily_intake,
+    presence: true,
+    numericality: {greater_than: 0 }
+  validates :remind, presence: true
+  validate :validate_content_size_more_than_daily_intake
 
   enum remind: {
     "リマインドなし": 0,
@@ -24,7 +34,7 @@ class Supplement < ApplicationRecord
   }.freeze
 
   def empty_date_and_time
-    created_at.next_day(remaining_quantity / daily_intake)
+    created_at.next_day(content_size / daily_intake)
   end
 
   def empty_date
@@ -38,5 +48,11 @@ class Supplement < ApplicationRecord
     else
       self.empty_date_and_time.prev_day(REMIND_DAY[enum_remind_number]).strftime('%F')
     end
+  end
+
+  private
+
+  def validate_content_size_more_than_daily_intake
+    errors.add(:content_size, 'は「1日の摂取量」以上にしてください') if content_size.to_i&. < daily_intake.to_i
   end
 end
