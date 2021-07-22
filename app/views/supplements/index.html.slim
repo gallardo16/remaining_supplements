@@ -23,9 +23,9 @@
               h4= supplement.name
             .item_row
                - if supplement.supplement_type == "tablet"
-                 | 残り: #{supplement.remaining_quantity}(錠)
+                 | 残り: #{supplement.content_size}(錠)
                - elsif supplement.supplement_type == "powder"
-                 | 残り: #{supplement.remaining_quantity}(g)
+                 | 残り: #{supplement.content_size}(g)
 
         .acd-content
           .item-rows

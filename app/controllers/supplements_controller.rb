@@ -11,7 +11,6 @@ class SupplementsController < ApplicationController
 
   def create
     @supplement = current_user.supplements.new(supplement_params)
-    @supplement.remaining_quantity = @supplement.content_size
     if @supplement.save
       redirect_to supplements_path, notice: "サプリメント「#{@supplement.name}」を登録しました。"
     else
@@ -41,6 +40,6 @@ class SupplementsController < ApplicationController
   private
 
   def supplement_params
-    params.require(:supplement).permit(:name, :supplement_type, :content_size, :daily_intake, :remind, :remaining_quantity)
+    params.require(:supplement).permit(:name, :supplement_type, :content_size, :daily_intake, :remind)
   end
 end
