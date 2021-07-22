@@ -5,12 +5,12 @@
         .error-word
           li= message
   = form_with model: supplement, local: true do |f|
-    .form-group.form-item
+    .form-item
       .form-label
         = f.label :name, 'サプリ名'
       .form-name-input
-        = f.text_field :name, class: 'form-control', id: 'name'
-    .form-group.form-item
+        = f.text_field :name, id: 'name'
+    .form-item
       .form-label
         = f.label :supplement_type, 'サプリメントタイプ'
       .form-check.form-radio-items
@@ -19,23 +19,23 @@
       .form-check.form-radio-items
         = f.radio_button 'supplement_type', 'powder'
         = f.label '粉類'
-      .form-group.form-item
-        .form-label
-          - if request.path == '/supplements/new'
-            = f.label :content_size, '内容量'
-          - else
-            = f.label :content_size, '内容量(残量に足して入力してください)'
-        .form-number-input
-          = f.number_field :content_size, class: 'form-control', id: 'content_size'
-    .form-group.form-item
+    .form-item
+      .form-label
+        - if request.path == '/supplements/new'
+          = f.label :content_size, '内容量'
+        - else
+          = f.label :content_size, '内容量(残量に足して入力してください)'
+      .form-number-input
+        = f.number_field :content_size, id: 'content_size'
+    .form-item
       .form-label
         = f.label :daily_intake, '1日あたりの摂取量'
       .form-number-input
-        = f.number_field :daily_intake, class: 'form-control', id: 'daily_intake'
-    .form-group.form-item
+        = f.number_field :daily_intake, id: 'daily_intake'
+    .form-item
       .form-label
         = f.label :remind, 'リマインド'
       .form-select-tab
         = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
-    =f.submit nil, class: 'btn btn-primary form-btn' do
+    =f.submit nil, class: 'form-btn' do
     = link_to 'キャンセル', supplements_path, class: 'form-btn'
