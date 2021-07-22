@@ -1,12 +1,12 @@
 .page-title
   h3 アカウント確認メール再送
-.form-itemse
+.form-items
   = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
     = render "devise/shared/error_messages", resource: resource
-    .form-group
+    .form-itemp
       = f.label :email
       .form-email-input
-        = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control'
+        = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
     .actions.link-btn
-      = f.submit 'メールを送信する', class: 'btn btn-primary'
+      = f.submit 'メールを送信する', class: 'btn-form'
   = render "devise/shared/links"
