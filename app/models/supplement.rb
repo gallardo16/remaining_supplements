@@ -9,6 +9,7 @@ class Supplement < ApplicationRecord
     presence: true,
     numericality: {greater_than: 0 }
   validates :remind, presence: true
+  validate :validate_content_size_more_than_daily_intake
 
   enum remind: {
     "リマインドなし": 0,
@@ -47,5 +48,11 @@ class Supplement < ApplicationRecord
     else
       self.empty_date_and_time.prev_day(REMIND_DAY[enum_remind_number]).strftime('%F')
     end
+  end
+
+  private
+
+  def validate_content_size_more_than_daily_intake
+    errors.add(:content_size, 'は「1日の摂取量」以上にしてください') if content_size < daily_intake
   end
 end
