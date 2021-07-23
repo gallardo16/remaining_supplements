@@ -7,7 +7,7 @@ body{
 
 header{
   background: #8EB8FF;
-  padding-left: 10px;
+  padding: 0 5px 0 10px;
 }
 
 footer{
@@ -16,7 +16,7 @@ footer{
   bottom: 0;
   background: #75A9FF;
   width: 100%;
-  height: 30px;
+  height: 25px;
 }
 
 ul#error_explanation{
@@ -30,14 +30,22 @@ ul#error_explanation{
 .nav-container{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .app-name{
   font-size: 40px;
+  flex-basis: 400px;
 }
 
 .nav-items{
   display: flex;
+  flex-basis: 250px;
+}
+
+.nav-item{
+  font-size: 20px;
+  margin: 0 auto;
 }
 
 .error-container{
@@ -54,7 +62,13 @@ ul#error_explanation{
     font-size: 16px;
   }
 
+  .nav-items{
+    display: flex;
+    flex-basis: 150px;
+  }
+
   .nav-item{
     font-size: 12px;
+    margin: 0 auto;
   }
 }
