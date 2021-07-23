@@ -6,8 +6,8 @@ body{
 }
 
 header{
-  background: #8EB8FF;
-  padding: 0 5px 0 10px;
+  background: #A4C6FF;
+  padding: 0 10px;
 }
 
 footer{
@@ -21,6 +21,10 @@ footer{
 
 ul#error_explanation{
   list-style-position: inside;
+}
+
+.main-items{
+  padding: 0 10px;
 }
 
 .error-word{
@@ -64,7 +68,7 @@ ul#error_explanation{
 
   .nav-items{
     display: flex;
-    flex-basis: 150px;
+    flex-basis: 170px;
   }
 
   .nav-item{
