@@ -14,7 +14,7 @@
     .form-item
       = f.label :password_confirmation
       .form-password-input
-        = f.password_field :password_confirmation, autocomplete: "new-password"", id: 'password_confirmation'
+        = f.password_field :password_confirmation, autocomplete: "new-password", id: 'password_confirmation'
     .actions
       = f.submit '登録する', class: 'btn-form'
   = render "devise/shared/links"
