@@ -6,7 +6,7 @@
     .form-itemp
       = f.label :email
       .form-email-input
-        = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
-    .actions.link-btn
-      = f.submit 'メールを送信する', class: 'btn-form'
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+    .btn-position
+      = f.submit 'メールを送信する', class: 'btn form-btn'
   = render "devise/shared/links"

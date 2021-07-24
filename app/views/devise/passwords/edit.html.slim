@@ -7,11 +7,11 @@
     .form-item
       = f.label :password, '新しいパスワード(6文字以上)'
       .form-password-input
-        = f.password_field :password, autofocus: true, autocomplete: "new-password"
+        = f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'form-control'
     .form-item
       = f.label :password_confirmation, '新しいパスワード(確認用)'
       .form-password-input
-        = f.password_field :password_confirmation, autocomplete: "new-password"
-    .actions
-      = f.submit '変更する', class: 'btn-form'
-  = render "devise/shared/links"
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+    .btn-position
+      = f.submit '変更する', class: 'btn form-btn update-btn'
+= render "devise/shared/links"

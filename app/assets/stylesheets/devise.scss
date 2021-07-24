@@ -3,5 +3,33 @@
 }
 
 .danger-items{
-  margin: 40px 15px;
+  margin-top: 80px;
+  border: 1px dotted #BBB;
+  border-radius: 5px;
+}
+
+.danger-title{
+  font-size: 14px;
+  color: #FFF;
+  background-color: #FF1493;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+}
+
+.cancel-items{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.cancel-desc{
+  flex-basis: 60%;
+}
+
+.destroy-btn{
+  margin: 20px 0;
+  color: red;
+  background-color: #FFF;
+  border: 1px solid #888;
 }

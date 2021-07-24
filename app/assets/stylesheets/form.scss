@@ -6,17 +6,37 @@
 .form-number-input,
 .form-select-tab,
 .form-email-input,
-.form-password-input
-{
-  width: 250px;
+.form-password-input{
+  width: 300px;
 }
 
 .form-btn{
-  margin: 20px;
+  margin-top: 30px;
+  border: 1px solid #BBB;
 }
 
-.link-btn{
-  margin: 20px 0;
+.create-btn{
+  color: #FFF;
+  background-color: #1E90FF;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.update-btn{
+  background-color: #FFD700;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.login-btn{
+  background-color: #FFF;
+}
+
+.send-mail-btn{
+  color: #111;
+  background-color: #FFF;
 }
 
 @media (max-width: 767.98px) {
@@ -28,7 +48,14 @@
     width: 100%;
   }
 
+  .btn-position{
+    display: flex;
+    justify-content: center;
+  }
+
   .form-btn{
-    margin: 20px 10px;
+    margin-top: 30px;
+    width: 60%;
+    font-size: 16px;
   }
 }
