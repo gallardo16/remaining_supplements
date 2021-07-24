@@ -8,6 +8,7 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     meta content="width=device-width,initial-scale=1" name="viewport"
+    script src="https://kit.fontawesome.com/aa99e80b9b.js" crossorigin="anonymous"
   body
     = render 'layouts/header'
     .container
@@ -17,4 +18,4 @@ html
         .alert.alert-warning = flash.alert
     .main-items
       = yield
-    = render 'layouts/footer'
+//    = render 'layouts/footer'

@@ -1,12 +1,15 @@
 .supplements-list{
-  width: 80%;
+  width: 90%;
   margin: 20px auto;
-  border-width: 3px;
-  border-style: solid;
+  border: 2px solid #888;
 }
 
 .supplement-item{
-  border-bottom: 4px solid;
+  border-bottom: 1px solid #AAA;
+}
+
+.supplement-item:last-child{
+  border-bottom: none;
 }
 
 .empty-list{
@@ -22,7 +25,7 @@
   width: 200px;
   color: #111;
   background-color: #fff;
-  border: 3px solid #333333;
+  border: 2px solid #555;
   border-radius: 30px;
 }
 
@@ -55,18 +58,47 @@
   display: block;
   margin-bottom: 1px;
   padding: 5px;
+  position: relative;
 }
+
+.acd-label:after{
+  color: #4169E1;
+  background: #FFF;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  content: '\f107';
+  font-family: "Font Awesome 5 Free";
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  height: 100%;
+  width: 20%;
+  right: 0;
+  top: 0px;
+  border-left: 1px solid #DDD;
+}
+
 .acd-content{
   background: #fff;
-  border-top: 1px dashed;
+  border-top: 1px dashed #AAA;
   height: 0;
   opacity: 0;
   padding: 0 10px;
   visibility: hidden;
 }
+
+.acd-check:checked + .acd-label:after{
+  content: '\f106';
+}
+
 .acd-check:checked + .acd-label + .acd-content{
-  height: 140px;
+  height: 160px;
   opacity: 1;
   padding: 10px;
   visibility: visible;
+}
+
+.supplement-btns{
+  display: flex;
 }

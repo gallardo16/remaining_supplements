@@ -32,14 +32,14 @@
             .item-row
               | なくなる日: #{supplement.empty_date}
             .item_row
-              | リマインド: #{supplement.remind} (#{supplement.remind_date})
+              | リマインド: #{supplement.remind}(#{supplement.remind_date})
             .item-row
-              | 1日あたりの摂取量: #{supplement.daily_intake}
+              | 1日の摂取量: #{supplement.daily_intake}
               - if supplement.supplement_type == "tablet"
                 | (錠)
               - elsif supplement.supplement_type == "powder"
                 | (g)
-            .item-row
+            item-rows.supplement-btns
               = link_to edit_supplement_path(supplement), class: 'btn btn-edit' do
                 | 編集
               = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-destroy' do
