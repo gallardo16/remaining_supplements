@@ -22,7 +22,7 @@
 .btn-add {
   margin: 20px auto;
   text-align: center;
-  width: 200px;
+  width: 400px;
   color: #111;
   background-color: #fff;
   border: 2px solid #555;
@@ -36,7 +36,7 @@
 
 .btn-edit{
   color: #111;
-  flex-basis: 50%;
+  flex-basis: 200px;
   font-size: 18px;
   height: 40px;
   border: 1px solid #AAA;
@@ -76,7 +76,7 @@
   font-weight: 900;
   text-align: center;
   height: 100%;
-  width: 20%;
+  width: 75px;
   right: 0;
   top: 0px;
   border-left: 1px solid #DDD;
@@ -101,3 +101,40 @@
   visibility: visible;
 }
 
+@media (max-width: 767.98px) {
+  .btn-add {
+    margin: 20px auto;
+    text-align: center;
+    width: 200px;
+    color: #111;
+    background-color: #fff;
+    border: 2px solid #555;
+    border-radius: 30px;
+  }
+
+  .btn-edit{
+    color: #111;
+    flex-basis: 50%;
+    font-size: 18px;
+    height: 40px;
+    border: 1px solid #AAA;
+  }
+
+  .acd-label:after{
+    color: #4169E1;
+    background: #FFF;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    content: '\f107';
+    font-family: "Font Awesome 5 Free";
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    height: 100%;
+    width: 20%;
+    right: 0;
+    top: 0px;
+    border-left: 1px solid #DDD;
+  }
+}
