@@ -21,6 +21,8 @@
         = f.password_field :current_password, autocomplete: "current-password", class: 'form-control', id: 'current_password'
     .btn-position
       = f.submit '更新する', class: ' btn form-btn update-btn'
+    .btn-position
+      = link_to t('devise.shared.links.back'), :back, class: 'btn form-btn cansel-btn'
 
 .danger-items
   .danger-title
