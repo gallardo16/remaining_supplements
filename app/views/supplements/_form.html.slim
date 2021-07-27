@@ -9,7 +9,7 @@
       .form-label
         = f.label :name, 'サプリ名'
       .form-name-input
-        = f.text_field :name, id: 'name'
+        = f.text_field :name, id: 'name', class: 'form-control'
     .form-item
       .form-label
         = f.label :supplement_type, 'サプリメントタイプ'
@@ -26,16 +26,18 @@
         - else
           = f.label :content_size, '内容量(残量に足して入力してください)'
       .form-number-input
-        = f.number_field :content_size, id: 'content_size'
+        = f.number_field :content_size, id: 'content_size', class: 'form-control'
     .form-item
       .form-label
         = f.label :daily_intake, '1日あたりの摂取量'
       .form-number-input
-        = f.number_field :daily_intake, id: 'daily_intake'
+        = f.number_field :daily_intake, id: 'daily_intake', class: 'form-control'
     .form-item
       .form-label
         = f.label :remind, 'リマインド'
       .form-select-tab
         = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
-    =f.submit nil, class: 'form-btn' do
-    = link_to 'キャンセル', supplements_path, class: 'form-btn'
+    .btn-position
+      =f.submit nil, class: 'btn form-btn create-btn' do
+.btn-position
+  = link_to 'キャンセル', supplements_path, class: 'btn form-btn cansel-btn'
