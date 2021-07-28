@@ -1,25 +1,80 @@
-.title{
-  margin: 20px
+.top-title{
+  font-size: 50px;
 }
 
-.description{
+.top-description{
   margin: 20px;
   font-size: 15px;
 }
 
-.btn-user-create{
-  border: 2px solid;
-  background: #fff;
+.user-create-btn{
+  border: 1px solid #BBB;
+  background: #00FFFF;
   margin: 20px;
+  border-radius: 5px;
 }
 
-.btn-user-create:hover{
-  background: #EEEEEE;
-}
+@media (max-width: 767.98px) {
+  .top-title{
+    color: #FFF;
+    background-color: #1E90FF;
+    text-align: center;
+    font-size: 22px;
+    padding: 30px 0;
+  }
 
-.btn-to-supplements{
-  border: 2px solid;
-  background: #fff;
-  margin: 20px;
-}
+  .sub-title{
+    font-size: 12px;
+    text-align: center;
+  }
 
+  .introduction-items{
+    margin-top: 5px;
+  }
+
+  .subject{
+    font-size: 22px;
+    font-family: serif;
+    text-align: center;
+  }
+
+  .top-description{
+    margin: 20px;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #AAA;
+  }
+
+  .btn-user-create{
+    border: 2px solid;
+    background: #fff;
+    margin: 20px;
+  }
+
+  .btn-user-create:hover{
+    background: #EEEEEE;
+  }
+
+  .btn-to-supplements{
+    border: 2px solid;
+    background: #fff;
+    margin: 20px;
+  }
+
+  .image-description{
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .image-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .image{
+    border: 1px solid #AAA;
+    margin: 10px auto;
+  }
+}

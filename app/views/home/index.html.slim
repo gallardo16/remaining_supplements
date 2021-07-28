@@ -1,16 +1,25 @@
-h1.title Remaining supplements
+.top-title
+  | Remaining supplements
+  .sub-title
+    | サプリメント管理アプリ
+.main-items
+  .introduction-items
+    .subject
+      | Introduction
+    .top-description
+      | サプリの内容量と1日あたりの摂取量を設定するだけで、いつなくなるのか一目瞭然！！
+      br
+      |さらに、リマインドも設定可能！！
+    .image-description
+      | ・リスト表示で残りが一目瞭然!!
+    .image-container
+      = image_tag 'supplements_list.png', :size =>'294x243', class: 'image'
+    .image-description
+      |  ・クリック(タップ)で詳細を表示!!
+    .image-container
+      = image_tag 'supplement_open_acd.png', :size =>'294x190', class: 'image'
 
-.description
-  | サプリメントの内容量と1日あたりの摂取量を設定するだけで、いつなくなるのか一目瞭然！！
-  br
-  |さらに、リマインドも設定可能！！
-
-
-p サンプル画像
-
-- if user_signed_in?
-  = link_to supplements_path, class: 'btn btn-to-supplements'
-    | サプリメント一覧へ
-- else
-  = link_to new_user_registration_path, class: 'btn btn-user-create'
-    | アカウントを作成して始める
+  .btn-position
+    .user-create-btn
+      = link_to new_user_registration_path, class: 'btn'
+        | アカウントを作成して始める

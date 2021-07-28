@@ -16,6 +16,5 @@ html
         .alert.alert-success = flash.notice
       - if flash.alert.present?
         .alert.alert-warning = flash.alert
-    .main-items
-      = yield
+    = yield
 //    = render 'layouts/footer'
