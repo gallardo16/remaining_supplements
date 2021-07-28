@@ -1,20 +1,21 @@
-.page-title
-  h3 アカウント登録
-.form-items
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .form-item
-      = f.label :email
-      .form-email-input
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', id: 'email'
-    .form-item
-      = f.label :password, 'パスワード(6文字以上)'
-      .form-password-input
-        = f.password_field :password, autocomplete: "new-password", class: 'form-control', id: 'password'
-    .form-item
-      = f.label :password_confirmation
-      .form-password-input
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', id: 'password_confirmation'
-    .btn-position
-      = f.submit '登録する', class: 'btn form-btn create-btn'
-= render "devise/shared/links"
+.main-items
+  .page-title
+    h3 アカウント登録
+  .form-items
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .form-item
+        = f.label :email
+        .form-email-input
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', id: 'email'
+      .form-item
+        = f.label :password, 'パスワード(6文字以上)'
+        .form-password-input
+          = f.password_field :password, autocomplete: "new-password", class: 'form-control', id: 'password'
+      .form-item
+        = f.label :password_confirmation
+        .form-password-input
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', id: 'password_confirmation'
+      .btn-position
+        = f.submit '登録する', class: 'btn form-btn create-btn'
+  = render "devise/shared/links"
