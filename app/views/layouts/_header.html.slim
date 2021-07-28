@@ -1,8 +1,13 @@
 header
   nav
     .nav-container
-      .app-name
-        |Remaining supplement
+      .app-name-container
+        - if user_signed_in?
+          = link_to supplements_path, class: 'app-name'
+            | Remaining supplement
+        - else
+          = link_to home_path, class: 'app-name'
+            | Remaining supplement
       .nav-items
         - if user_signed_in?
           = link_to  edit_user_registration_path, class: 'nav-item' do

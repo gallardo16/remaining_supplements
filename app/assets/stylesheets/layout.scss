@@ -37,9 +37,19 @@ ul#error_explanation{
   align-items: center;
 }
 
-.app-name{
+.app-name-container{
   font-size: 40px;
   flex-basis: 400px;
+}
+
+.app-name{
+  color: #0000AA;
+  text-decoration: none;
+}
+
+.app-name:hover {
+  color: #0000AA;
+  text-decoration: none;
 }
 
 .nav-items{
@@ -61,7 +71,7 @@ ul#error_explanation{
 }
 
 @media (max-width: 767.98px) {
-  .app-name{
+  .app-name-container{
     flex-basis: 100px;
     font-size: 16px;
   }
