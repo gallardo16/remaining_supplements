@@ -10,9 +10,9 @@
   width: 400px;
 }
 
-.btn-position-center{
+.btn-position{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   margin-bottom: 30px;
 }
 
@@ -25,18 +25,21 @@
 .create-btn{
   color: #FFF;
   background-color: #1E90FF;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 .update-btn{
   background-color: #FFD700;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
-.login-btn, .cansel-btn{
-  background-color: #FFF;
-}
-
+.login-btn,
+.cansel-btn,
 .send-mail-btn{
-  color: #111;
   background-color: #FFF;
 }
 
@@ -49,23 +52,12 @@
     width: 100%;
   }
 
+  .btn-position{
+    justify-content: center;
+  }
+
   .form-btn{
     margin-top: 30px;
     width: 60%;
-  }
-
-  .create-btn{
-    color: #FFF;
-    background-color: #1E90FF;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 2px;
-  }
-
-  .update-btn{
-    background-color: #FFD700;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 2px;
   }
 }

@@ -6,35 +6,28 @@
   .home-items
     .home-headline.text-position-center
       | Introduction
-    .home-description.text-position-center
+    .home-description
       | サプリの内容量と1日あたりの摂取量を設定するだけで、毎日自動更新！
       br
-      | 残りが一目瞭然！！
-      br
-      |さらに、リマインドも設定可能！！
+      | 残りが一目瞭然！リマインドも設定可能！
     .example-items
       .home-headline.text-position-center
         | example
       .image-description.text-position-center
         | ・リスト表示で残りが一目瞭然!!
       .image-container
-        = image_tag 'supplements_list.png', :size =>'294x243', class: 'image'
+        = image_tag 'supplements_list.png', :size =>'256x212', class: 'image'
       .icon-position-center
         i class="far fa-arrow-alt-circle-down fa-3x"
       .image-description.text-position-center
         |  ・クリック(タップ)で詳細を表示!!
       .image-container
-        = image_tag 'supplement_open_acd.png', :size =>'299x375', class: 'image'
+        = image_tag 'supplement_open_acd.png', :size =>'260x328', class: 'image'
       .icon-position-center
         i class="fas fa-capsules fa-3x"
       .image-description.text-position-center
         | ・サプリも簡単に登録可能!!
-      .image-container
-        = image_tag 'supplement_add.png', :size => '288x566', class: 'image'
 
-
-
-  .btn-position-center
-    .user-create-btn
-      = link_to new_user_registration_path, class: 'btn'
-        | アカウントを作成して始める
+  .user-create-btn
+    = link_to new_user_registration_path, class: 'btn'
+      | アカウントを作成して始める

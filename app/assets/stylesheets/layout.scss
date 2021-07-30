@@ -65,7 +65,7 @@ ul#error_explanation{
   margin: 15px 0;
   padding: 10px;
   color: #B22222;
-  background-color: #FFF0F5;
+  background: #FFF0F5;
   border: 1px solid #FF1493;
 }
 
@@ -103,20 +103,15 @@ ul#error_explanation{
   }
 
   .nav-items{
-    display: flex;
     flex-basis: 170px;
   }
 
   .nav-item{
     font-size: 12px;
-    margin: 0 auto;
   }
 
   .error-container{
     margin: 10px 0;
     padding: 5px;
-    color: #B22222;
-    background-color: #FFF0F5;
-    border: 1px solid #FF1493;
   }
 }

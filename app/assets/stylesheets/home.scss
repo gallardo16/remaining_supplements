@@ -1,6 +1,6 @@
 .top-title{
   color: #FFF;
-  background-color: #1E90FF;
+  background: #1E90FF;
   font-size: 32px;
   padding: 30px 0;
 }
@@ -19,15 +19,17 @@
 }
 
 .home-description{
-  margin: 20px;
   font-size: 15px;
-  margin-bottom: 30px;
+  margin: 20px 20px 30px;
   padding-bottom: 15px;
+  text-align: center;
 }
 
 .example-items{
   background: #FFF;
+  padding: 5px 0 30px;
   margin: 0 25%;
+  border-top: 1px solid #DDD;
 }
 
 .image-description{
@@ -46,26 +48,32 @@
 }
 
 .user-create-btn{
-  border: 1px solid #BBB;
+  display: flex;
+  justify-content: center;
   background: #00FFFF;
-  margin: 20px;
+  margin: 50px 30%;
+  border: 1px solid #BBB;
   border-radius: 5px;
 }
 
 @media (max-width: 767.98px) {
   .top-title{
-    color: #FFF;
-    background-color: #1E90FF;
     font-size: 22px;
-    padding: 30px 0;
   }
 
   .sub-title{
     font-size: 12px;
   }
 
+  .home-description{
+    text-align: start;
+  }
+
   .example-items{
-    background: #FFF;
     margin: 0;
+  }
+
+  .user-create-btn{
+    margin: 20px 10%;
   }
 }

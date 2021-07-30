@@ -2,7 +2,7 @@
   margin: 50px 0;
 }
 
-.link-btn{
+.link-item{
   margin-top: 10px;
 }
 
@@ -20,14 +20,14 @@
   padding: 5px 10px;
 }
 
-.cancel-items{
+.destroy-items{
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px;
 }
 
-.cancel-desc{
+.destroy-desc{
   flex-basis: 60%;
 }
 
