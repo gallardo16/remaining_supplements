@@ -2,17 +2,30 @@
   .page-title
     h4 サプリメントリスト
 
-  .btn-add
+  .btn-supplement-add
     = link_to new_supplement_path, class: 'btn' do
+      i class="fas fa-plus-circle"
       | サプリメント追加
 
-  - if @supplements.empty?
-    .empty-list
-      | サプリメントを追加する場合は上にある「サプリメント追加」を押してください
+  - if flash[:notice] == "アカウント登録が完了しました。"
+    .welcome-content
+      .text-position-center
+        strong ご登録ありがとうございます！
       br
-      |
+      | さっそくサプリメントを登録してみましょう！
       br
-      |  サプリメントの追加方法や仕様についてはヘルプを押してみてください
+      | 上の「サプリメント追加」を押してください！
+      br
+      br
+      | 困ったときは下の「ヘルプ」を押してみてください!
+
+  - if @supplements.empty? && flash[:notice] != "アカウント登録が完了しました。"
+
+    .supplements-empty
+      .icon-position-center
+        i class="far fa-flushed fa-4x"
+      .text-position-center
+        | サプリメントはありません
 
   - if @supplements.exists?
     .supplements-list
@@ -33,7 +46,11 @@
               .item-row
                 | なくなる日: #{supplement.empty_date}
               .item_row
-                | リマインド: #{supplement.remind}(#{supplement.remind_date})
+                - if supplement.remind_date.nil?
+                  | リマインド: #{supplement.remind}
+                  i class="fas fa-bell-slash"
+                - else
+                  | リマインド: #{supplement.remind}(#{supplement.remind_date})
               .item-row
                 | 1日の摂取量: #{supplement.daily_intake}
                 - if supplement.supplement_type == "tablet"
@@ -41,7 +58,9 @@
                 - elsif supplement.supplement_type == "powder"
                   | (g)
               item-rows.supplement-btns
-                = link_to edit_supplement_path(supplement), class: 'btn btn-edit' do
-                  | 編集
-                = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-destroy' do
-                  | 削除
+                = link_to edit_supplement_path(supplement), class: 'btn btn-supplement-edit' do
+                  i class="fas fa-wrench"
+                  |  編集
+                = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-supplement-destroy' do
+                  i class="fas fa-trash"
+                  |  削除

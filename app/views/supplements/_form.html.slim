@@ -11,12 +11,11 @@
       .form-name-input
         = f.text_field :name, id: 'name', class: 'form-control'
     .form-item
-      .form-label
-        = f.label :supplement_type, 'サプリメントタイプ'
-      .form-check.form-radio-items
+      = f.label :supplement_type, 'サプリメントタイプ'
+      .form-check
         = f.radio_button 'supplement_type', 'tablet', checked: true
         = f.label '錠剤'
-      .form-check.form-radio-items
+      .form-check
         = f.radio_button 'supplement_type', 'powder'
         = f.label '粉類'
     .form-item
