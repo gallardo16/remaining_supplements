@@ -7,21 +7,30 @@
     .subject
       | Introduction
     .top-description
-      | サプリの内容量と1日あたりの摂取量を設定するだけで、いつなくなるのか一目瞭然！！
+      | サプリの内容量と1日あたりの摂取量を設定するだけで、毎日自動更新！
+      be
+      | 残りが一目瞭然！！
       br
       |さらに、リマインドも設定可能！！
-    .image-description
-      | ・リスト表示で残りが一目瞭然!!
-    .image-container
-      = image_tag 'supplements_list.png', :size =>'294x243', class: 'image'
-    .image-description
-      |  ・クリック(タップ)で詳細を表示!!
-    .image-container
-      = image_tag 'supplement_open_acd.png', :size =>'294x190', class: 'image'
-    .image-description
-      | ・サプリも簡単に登録可能!!
-    .image-container
-      = image_tag 'supplement_create.png', :size => '284x592', class: 'image'
+    .example-items
+      .subject
+        | example
+      .image-description
+        | ・リスト表示で残りが一目瞭然!!
+      .image-container
+        = image_tag 'supplements_list.png', :size =>'294x243', class: 'image'
+      .icon-position-center
+        i class="far fa-arrow-alt-circle-down fa-3x"
+      .image-description
+        |  ・クリック(タップ)で詳細を表示!!
+      .image-container
+        = image_tag 'supplement_open_acd.png', :size =>'299x375', class: 'image'
+      .icon-position-center
+        i class="fas fa-capsules fa-3x"
+      .image-description
+        | ・サプリも簡単に登録可能!!
+      .image-container
+        = image_tag 'supplement_create.png', :size => '284x592', class: 'image'
 
 
 
