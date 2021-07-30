@@ -10,6 +10,12 @@
   width: 400px;
 }
 
+.btn-position-center{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 .form-btn{
   margin-top: 30px;
   border: 1px solid #BBB;
@@ -41,12 +47,6 @@
   .form-email-input,
   .form-password-input{
     width: 100%;
-  }
-
-  .btn-position{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
   }
 
   .form-btn{

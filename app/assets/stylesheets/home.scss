@@ -1,10 +1,48 @@
 .top-title{
-  font-size: 50px;
+  color: #FFF;
+  background-color: #1E90FF;
+  font-size: 32px;
+  padding: 30px 0;
 }
 
-.top-description{
+.sub-title{
+  font-size: 16px;
+}
+
+.home-items{
+  margin-top: 5px;
+}
+
+.home-headline{
+  font-size: 22px;
+  font-family: serif;
+}
+
+.home-description{
   margin: 20px;
   font-size: 15px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.example-items{
+  background: #FFF;
+  margin: 0 25%;
+}
+
+.image-description{
+  padding-top: 20px;
+}
+
+.image-container{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.image{
+  border: 1px solid #AAA;
+  margin: 10px auto;
 }
 
 .user-create-btn{
@@ -18,51 +56,16 @@
   .top-title{
     color: #FFF;
     background-color: #1E90FF;
-    text-align: center;
     font-size: 22px;
     padding: 30px 0;
   }
 
   .sub-title{
     font-size: 12px;
-    text-align: center;
-  }
-
-  .introduction-items{
-    margin-top: 5px;
-  }
-
-  .subject{
-    font-size: 22px;
-    font-family: serif;
-    text-align: center;
-  }
-
-  .top-description{
-    margin: 20px;
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
   }
 
   .example-items{
     background: #FFF;
-  }
-
-  .image-description{
-    text-align: center;
-    padding-top: 20px;
-  }
-
-  .image-container{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
-  }
-
-  .image{
-    border: 1px solid #AAA;
-    margin: 10px auto;
+    margin: 0;
   }
 }
