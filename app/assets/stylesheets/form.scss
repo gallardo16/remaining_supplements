@@ -1,5 +1,5 @@
-.form-radio-items{
-  display: flex;
+.form-item{
+  margin-top: 25px;
 }
 
 .form-name-input,
@@ -7,13 +7,13 @@
 .form-select-tab,
 .form-email-input,
 .form-password-input{
-  width: 300px;
+  width: 400px;
 }
 
 .form-btn{
   margin-top: 30px;
   border: 1px solid #BBB;
-  width: 150px;
+  width: 200px;
 }
 
 .create-btn{
@@ -46,12 +46,12 @@
   .btn-position{
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
   }
 
   .form-btn{
     margin-top: 30px;
     width: 60%;
-    font-size: 16px;
   }
 
   .create-btn{
