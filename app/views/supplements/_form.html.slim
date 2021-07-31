@@ -14,16 +14,18 @@
       = f.label :supplement_type, 'サプリメントタイプ'
       .form-check
         = f.radio_button 'supplement_type', 'tablet', checked: true
-        = f.label '錠剤'
+        = f.label '錠剤(錠)'
       .form-check
         = f.radio_button 'supplement_type', 'powder'
-        = f.label '粉類'
+        = f.label '粉類(g)'
     .form-item
+      .confirmation-text
+        | ＊内容量の自動更新のタイミングは午前0時です
       .form-label
         - if request.path == '/supplements/new'
           = f.label :content_size, '内容量'
         - else
-          = f.label :content_size, '内容量(残量に足して入力してください)'
+            = f.label :content_size, '内容量(残量にたして入力してください)'
       .form-number-input
         = f.number_field :content_size, id: 'content_size', class: 'form-control'
     .form-item
@@ -32,6 +34,8 @@
       .form-number-input
         = f.number_field :daily_intake, id: 'daily_intake', class: 'form-control'
     .form-item
+      .confirmation-text
+        | ＊リマインドメールはリマインド日の午前9時に送信されます
       .form-label
         = f.label :remind, 'リマインド'
       .form-select-tab
