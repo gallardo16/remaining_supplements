@@ -2,12 +2,12 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  root 'supplements#index'
+  root "supplements#index"
 
-  get 'home', to: 'home#index'
+  get "home", to: "home#index"
   resources :supplements
 
-  get 'tos', to: 'tos#index'
-  get 'policy', to: 'policy#index'
+  get "tos", to: "tos#index"
+  get "policy", to: "policy#index"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
