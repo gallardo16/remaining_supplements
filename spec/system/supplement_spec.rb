@@ -19,15 +19,14 @@ RSpec.describe "サプリメント管理機能", type: :system do
         find(".acd-label").click
         expect(page).to have_content "なくなる日"
         expect(page).to have_content "リマインド"
-        expect(page).to have_content "1日あたりの摂取量"
+        expect(page).to have_content "1日の摂取量"
       end
 
       it "サプリメントがない場合は文言が表示される" do
         find(".acd-label").click
         click_on "削除"
         page.driver.browser.switch_to.alert.accept
-        expect(page).to have_content "サプリメントを追加する場合は上にある「サプリメント追加」を押してください"
-        expect(page).to have_content "サプリメントの追加方法や仕様についてはヘルプを押してみてください"
+        expect(page).to have_content "サプリメントはありません"
       end
     end
   end

@@ -91,7 +91,7 @@ RSpec.describe "ユーザ管理機能", type: :system do
       it "アカウントを削除できる" do
         click_button "削除する"
         page.driver.browser.switch_to.alert.accept
-        expect(page).to have_content "ログインもしくはアカウント登録してください。"
+        expect(page).to have_content "アカウントを削除しました。またのご利用をお待ちしております。"
       end
     end
 
@@ -147,7 +147,7 @@ RSpec.describe "ユーザ管理機能", type: :system do
         fill_in "password", with: "testtest"
         click_button "ログインする"
         find("a", text: "ログアウト").click
-        expect(page).to have_content "ログインもしくはアカウント登録してください。"
+        expect(page).to have_content "ログアウトしました。"
       end
     end
 
