@@ -51,7 +51,7 @@ RSpec.describe "ユーザ管理機能", type: :system do
       end
 
       it "重複したメールアドレスの場合、無効である" do
-        user = FactoryBot.create(:user)
+        FactoryBot.create(:user)
         visit new_user_registration_path
         fill_in "email", with: "test@example.com"
         fill_in "password", with: "testtest"
