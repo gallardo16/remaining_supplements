@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "policy", to: "policy#index"
 
   authenticated :user do
-    root "supplements#index", :as => "user_authenticated_root"
+    root "supplements#index", as: "user_authenticated_root"
   end
   root "home#index"
 
