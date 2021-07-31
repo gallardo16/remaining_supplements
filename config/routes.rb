@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   resources :supplements
 
-  get 'help', to: 'help#index'
   get 'tos', to: 'tos#index'
   get 'policy', to: 'policy#index'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
