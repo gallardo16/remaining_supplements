@@ -7,9 +7,10 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag('favicon.ico')
+    meta name="description" content="サプリの残りはどれくらいなのか？といった問題をRemaining supplementsは簡単登録で解決します。 サプリを定量摂取している人のサプリ管理アプリです。"
     meta content="width=device-width,initial-scale=1" name="viewport"
     script src="https://kit.fontawesome.com/aa99e80b9b.js" crossorigin="anonymous"
-    = favicon_link_tag('favicon.ico')
   body
     = render 'layouts/header'
     .container
