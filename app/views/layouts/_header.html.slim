@@ -4,7 +4,7 @@ header
       .app-name-container
         - if user_signed_in?
           = link_to supplements_path, class: 'app-name'
-            | Remaining supplement
+            | Remaining supplements
         - else
           = link_to home_path, class: 'app-name'
             | Remaining supplement
