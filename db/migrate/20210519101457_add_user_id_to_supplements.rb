@@ -1,7 +1,7 @@
 class AddUserIdToSupplements < ActiveRecord::Migration[6.0]
-   def up
+  def up
     add_reference :supplements, :user, null: false, index: true
-  end
+ end
 
   def down
     remove_reference :supplements, :user, index: true

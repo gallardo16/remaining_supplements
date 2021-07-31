@@ -38,8 +38,7 @@ class SupplementsController < ApplicationController
   end
 
   private
-
-  def supplement_params
-    params.require(:supplement).permit(:name, :supplement_type, :content_size, :daily_intake, :remind)
-  end
+    def supplement_params
+      params.require(:supplement).permit(:name, :supplement_type, :content_size, :daily_intake, :remind)
+    end
 end

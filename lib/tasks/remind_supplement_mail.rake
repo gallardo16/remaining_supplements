@@ -1,5 +1,5 @@
 desc "This task is called by Heroku schduler add-on"
-task :remind_mail_of_supplement => :environment do
+task remind_mail_of_supplement: :environment do
   users = User.all
   users.each do |user|
     user.supplements.each do |supplement|
