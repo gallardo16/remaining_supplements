@@ -1,12 +1,10 @@
 .main-items
   .page-title
     h4 サプリメントリスト
-
   .btn-supplement-add
     = link_to new_supplement_path, class: 'btn' do
       i class="fas fa-plus-circle"
       | サプリメント追加
-
   - if flash[:notice] == "アカウント登録が完了しました。"
     .welcome-content
       .text-position-center
@@ -15,15 +13,12 @@
       | さっそくサプリメントを登録してみましょう！
       br
       | 上の「サプリメント追加」を押してください！
-
   - if @supplements.empty? && flash[:notice] != "アカウント登録が完了しました。"
-
     .supplements-empty
       .icon-position-center.icon-margin-bottom
         i class="far fa-flushed fa-4x"
       .text-position-center
         | サプリメントはありません
-
   - if @supplements.exists?
     .supplements-list
       - @supplements.each do |supplement|
@@ -37,7 +32,6 @@
                    | 残り: #{supplement.content_size}(錠)
                  - elsif supplement.supplement_type == "powder"
                    | 残り: #{supplement.content_size}(g)
-
           .acd-content
             .item-rows
               .item-row
