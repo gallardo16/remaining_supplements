@@ -7,9 +7,7 @@ body{
 }
 
 header{
-  background: #FFF;
   padding: 0 10px;
-  border-bottom: 1px solid #AAA;
 }
 
 footer{
@@ -37,29 +35,21 @@ ul#error_explanation{
   align-items: center;
 }
 
-.app-name-container{
-  font-size: 40px;
-  flex-basis: 400px;
-}
-
 .app-name{
-  color: #0000AA;
+  color: #1E90FF;
+  font-size: 40px;
   text-decoration: none;
+  font-family: 'Karla', sans-serif;
 }
 
-.app-name:hover {
-  color: #0000AA;
+.app-name:hover{
+  color: #1E90FF;
   text-decoration: none;
-}
-
-.nav-items{
-  display: flex;
-  flex-basis: 400px;
 }
 
 .nav-item{
-  font-size: 20px;
-  margin: 0 auto;
+  white-space: nowrap;
+  margin: 0 8px;
 }
 
 .error-container{
@@ -98,13 +88,8 @@ ul#error_explanation{
 }
 
 @media (max-width: 767.98px) {
-  .app-name-container{
-    flex-basis: 100px;
-    font-size: 16px;
-  }
-
-  .nav-items{
-    flex-basis: 170px;
+  .app-name{
+    font-size: 20px;
   }
 
   .nav-item{

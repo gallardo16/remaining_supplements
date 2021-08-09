@@ -3,11 +3,9 @@ header
     .nav-container
       .app-name-container
         - if user_signed_in?
-          = link_to supplements_path, class: 'app-name'
-            | Remaining supplements
+          = link_to "Resupple", supplements_path, class: 'app-name'
         - else
-          = link_to home_path, class: 'app-name'
-            | Remaining supplements
+          = link_to "Resupple", home_path, class: 'app-name'
       .nav-items
         - if user_signed_in?
           = link_to  edit_user_registration_path, class: 'nav-item' do

@@ -12,7 +12,8 @@ html
     meta content="width=device-width,initial-scale=1" name="viewport"
     script src="https://kit.fontawesome.com/aa99e80b9b.js" crossorigin="anonymous"
   body
-    = render 'layouts/header'
+    - if request.path != '/home' && request.path != '/'
+      = render 'layouts/header'
     .container
       - if flash.notice.present?
         .alert.alert-success = flash.notice
