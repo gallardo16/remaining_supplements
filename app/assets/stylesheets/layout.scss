@@ -21,10 +21,6 @@ ul#error_explanation{
   list-style-position: inside;
 }
 
-.main-items{
-  padding: 0 10px;
-}
-
 .error-word{
   font-size: 12px;
 }
@@ -87,7 +83,18 @@ ul#error_explanation{
   margin-top: 20px
 }
 
+@media (min-width: 768px) {
+  body{
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 767.98px) {
+  .main-items{
+    margin: 0 10px;
+  }
+
   .app-name{
     font-size: 20px;
   }

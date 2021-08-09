@@ -1,38 +1,21 @@
-.top-title.text-position-center
-  | Remaining supplements
-  .sub-title.test-position-center
-    | サプリメント管理アプリ
 .main-items
-  .home-items
-    .home-headline.text-position-center
-      | Introduction
-    .home-description
-      .home-description-sentence
-        | サプリを毎日定量摂取している人向けの残量とリマインドを管理するサービスです。
-      .home-description-sentence
-        | サプリの「内容量」と「1日あたりの摂取量」を設定するだけで、残量を毎日自動更新!
-      .home-description-sentence
-        | 残量となくなる日が一目瞭然！
-      .home-description-sentence
-        | リマインドも設定可能!
-    .example-items
-      .home-headline.text-position-center
-        | example
-      .image-description.text-position-center
-        | ・リスト表示で残りが一目瞭然
-      .image-container
-        = image_tag 'supplements_list.png', :size =>'256x212', class: 'image'
-      .icon-position-center.icon-margin-bottom
-        i class="far fa-arrow-alt-circle-down fa-3x"
-      .image-description.text-position-center
-        |  ・クリック(タップ)で詳細を表示
-      .image-container
-        = image_tag 'supplement_open_acd.png', :size =>'260x328', class: 'image'
-      .icon-position-center.icon-margin-bottom
-        i class="fas fa-capsules fa-3x"
-      .image-description.text-position-center
-        | ・サプリも簡単に登録可能!
+  .top-title.text-position-center
+    | Resupple
+  section.text-position-center
+    p.home-description-sentence
+      | サプリを毎日定量摂取している人向けの残量とリマインドを管理するサービスです。
+    p.home-description-sentence
+      | サプリの内容量と1日あたりの摂取量を設定するだけで残量を毎日自動更新！
+    p.home-description-sentence
+      | 残量となくなる日が一目瞭然！
+      br
+      | リマインドも設定可能！
+  = link_to new_user_registration_path, class: 'btn user-create-btn'
+    | アカウントを作成して始める
 
-  .user-create-btn
-    = link_to new_user_registration_path, class: 'btn'
-      | アカウントを作成して始める
+
+  .home-icon-items
+    i class="fas fa-user-clock fa-3x"
+    i class="far fa-envelope fa-3x"
+    i class="far fa-paper-plane fa-3x"
+    i class="far fa-smile fa-3x"

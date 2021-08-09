@@ -1,88 +1,42 @@
 .top-title{
-  color: #FFF;
-  background: #1E90FF;
-  font-size: 32px;
-  padding: 30px 0;
-}
-
-.sub-title{
-  font-size: 16px;
-}
-
-.home-items{
-  margin-top: 5px;
-}
-
-.home-headline{
-  font-size: 24px;
-  font-family: serif;
-}
-
-.home-description{
-  margin: 20px 20px 30px;
-  padding-bottom: 15px;
-  text-align: center;
+  color: #1E90FF;
+  font-size: 40px;
+  font-family: 'Karla', sans-serif;
+  margin: 45px 0;
 }
 
 .home-description-sentence{
-  font-size:  18px;
-  margin-bottom: 10px;
-}
-
-.example-items{
-  background: #FFF;
-  padding: 5px 0 30px;
-  margin: 0 25%;
-  border-top: 1px solid #DDD;
-}
-
-.image-description{
-  padding-top: 20px;
-}
-
-.image-container{
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-
-.image{
-  border: 1px solid #AAA;
-  margin: 10px auto;
+  font-size: 20px;
 }
 
 .user-create-btn{
   display: flex;
   justify-content: center;
-  background: #00FFFF;
-  margin: 50px 30%;
-  border: 1px solid #BBB;
+  background: #d819c7;
   border-radius: 5px;
+  color: #FFF;
+  font-size: 20px;
+  margin: 45px 0;
+}
+
+.user-create-btn:hover{
+  color: #FFF;
+  text-decoration: none;
+}
+
+.home-icon-items{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 90px;
+  color: #1E90EF;
 }
 
 @media (max-width: 767.98px) {
-  .top-title{
-    font-size: 22px;
-  }
-
-  .sub-title{
-    font-size: 12px;
-  }
-
-  .home-description{
-    margin: 20px 10px 30px;
-  }
-
   .home-description-sentence{
-    font-size:  16px;
-    margin-bottom: 15px;
-  }
-
-  .example-items{
-    margin: 0;
+    font-size: 16px;
   }
 
   .user-create-btn{
-    margin: 20px 10%;
+    font-size: 16px;
   }
 }
