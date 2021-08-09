@@ -1,6 +1,6 @@
+.page-title
+  | アカウント確認メール再送
 .main-items
-  .page-title
-    h3 アカウント確認メール再送
   .form-items
     = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
       = render "devise/shared/error_messages", resource: resource

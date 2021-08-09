@@ -1,6 +1,6 @@
+.page-title
+  | パスワード変更
 .main-items
-  .page-title
-    h3 パスワード変更
   .form-items
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource

@@ -1,6 +1,6 @@
+.page-title
+  | ログイン
 .main-items
-  .page-title
-    h3 ログイン
   .form-items
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource

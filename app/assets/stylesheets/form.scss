@@ -7,40 +7,46 @@
 .form-select-tab,
 .form-email-input,
 .form-password-input{
-  width: 400px;
+  width: 100%;
 }
 
 .btn-position{
   display: flex;
-  justify-content: start;
-  margin-bottom: 30px;
+  justify-content: center;
 }
 
 .form-btn{
-  margin-top: 30px;
-  border: 1px solid #BBB;
-  width: 200px;
+  margin-top: 40px;
+  width: 384px;
 }
 
-.create-btn{
+.create-btn,
+.login-btn{
   color: #FFF;
-  background-color: #1E90FF;
+  background: #1E90FF;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 2px;
 }
 
-.update-btn{
-  background-color: #FFD700;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 2px;
+.create-btn:hover,
+.login-btn:hover{
+  color: #FFF;
 }
 
-.login-btn,
-.cansel-btn,
+.update-btn,
 .send-mail-btn{
-  background-color: #FFF;
+  background: #fabd17;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.cansel-btn{
+  background: #FFF;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: 1px solid #BBB;
 }
 
 @media (max-width: 767.98px) {
@@ -52,12 +58,7 @@
     width: 100%;
   }
 
-  .btn-position{
-    justify-content: center;
-  }
-
   .form-btn{
-    margin-top: 30px;
-    width: 60%;
+    width: 100%;
   }
 }

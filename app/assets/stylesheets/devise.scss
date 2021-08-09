@@ -13,9 +13,9 @@
 }
 
 .danger-title{
-  font-size: 14px;
+  font-size: 18px;
   color: #FFF;
-  background-color: #FF1493;
+  background-color: red;
   border-radius: 5px 5px 0 0;
   padding: 5px 10px;
 }
@@ -28,7 +28,7 @@
 }
 
 .destroy-desc{
-  flex-basis: 60%;
+  padding-right: 20px;
 }
 
 .destroy-btn{

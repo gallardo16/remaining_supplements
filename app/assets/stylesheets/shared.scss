@@ -1,8 +1,19 @@
 .page-title{
-  margin-top: 20px;
+  color: #FFF;
+  font-size: 22px;
+  background: #1E90FF;
+  padding-left: 10px;
+  line-height: 32px;
 }
 
 .icon-position-center,
 .text-position-center{
   text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .page-title{
+    font-size: 16px;
+    line-height: 26px;
+  }
 }
