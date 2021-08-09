@@ -2,7 +2,6 @@
   color: #FFF;
   font-size: 22px;
   background: #1E90FF;
-  padding-left: 10px;
   line-height: 32px;
 }
 
@@ -11,9 +10,16 @@
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .page-title{
+    margin: 0 10px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .page-title{
     font-size: 16px;
     line-height: 26px;
+    padding-left: 10px;
   }
 }
