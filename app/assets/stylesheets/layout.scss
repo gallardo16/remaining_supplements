@@ -7,7 +7,14 @@ body{
 }
 
 header{
+  height: 60px;
+  display: flex;
+  align-items: center;
   padding: 0 10px;
+}
+
+nav{
+  flex-basis: 100%;
 }
 
 footer{
@@ -91,6 +98,10 @@ ul#error_explanation{
 }
 
 @media (max-width: 767.98px) {
+  header{
+    height: 40px;
+  }
+
   .main-items{
     margin: 0 10px;
   }
