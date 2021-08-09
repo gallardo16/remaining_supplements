@@ -3,7 +3,7 @@ body{
   min-height: 100vh;
   padding-bottom: 60px;
   box-sizing: border-box;
-  background: #F8F8FF;
+  background: #FFF;
 }
 
 header{
@@ -16,6 +16,7 @@ footer{
   position: absolute;
   bottom: 0;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 ul#error_explanation{
