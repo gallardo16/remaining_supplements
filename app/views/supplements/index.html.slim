@@ -1,24 +1,20 @@
+.page-title
+  | サプリメントリスト
 .main-items
-  .page-title
-    h4 サプリメントリスト
-  .btn-supplement-add
-    = link_to new_supplement_path, class: 'btn' do
-      i class="fas fa-plus-circle"
-      | サプリメント追加
   - if flash[:notice] == "アカウント登録が完了しました。"
-    .welcome-content
-      .text-position-center
-        strong ご登録ありがとうございます！
-      br
-      | さっそくサプリメントを登録してみましょう！
-      br
-      | 上の「サプリメント追加」を押してください！
+    section.welcome-content.text-position-center
+      strong.welcome-title
+        | ご登録ありがとうございます！
+      p.welcome-sentence
+        | さっそくサプリメントを登録してみましょう！
+      p.welcome-sentence
+        | 「サプリメント追加」を押してください！
   - if @supplements.empty? && flash[:notice] != "アカウント登録が完了しました。"
     .supplements-empty
-      .icon-position-center.icon-margin-bottom
+      .icon-position-center
         i class="far fa-flushed fa-4x"
-      .text-position-center
-        | サプリメントはありません
+      .empty-sentence.text-position-center
+        | サプリメントは登録されていません！
   - if @supplements.exists?
     .supplements-list
       - @supplements.each do |supplement|
@@ -26,32 +22,40 @@
           input.acd-check id="#{supplement.id}" type="checkbox"
           label.acd-label for="#{supplement.id}"
               .item_row
-                h4= supplement.name
+                .supplement-name
+                  = supplement.name
               .item_row
-                 - if supplement.supplement_type == "tablet"
-                   | 残り: #{supplement.content_size}(錠)
-                 - elsif supplement.supplement_type == "powder"
-                   | 残り: #{supplement.content_size}(g)
+                .supplement-info
+                   - if supplement.supplement_type == "tablet"
+                     | 残り: #{supplement.content_size}(錠)
+                   - elsif supplement.supplement_type == "powder"
+                     | 残り: #{supplement.content_size}(g)
           .acd-content
             .item-rows
               .item-row
-                | なくなる日: #{supplement.empty_date}
+                .supplement-info
+                  | なくなる日: #{supplement.empty_date}
               .item_row
-                - if supplement.remind_date.nil?
-                  | リマインド: #{supplement.remind}
-                  i class="fas fa-bell-slash"
-                - else
-                  | リマインド: #{supplement.remind}(#{supplement.remind_date})
+                .supplement-info
+                  - if supplement.remind_date.nil?
+                    | リマインド: #{supplement.remind}
+                    i class="fas fa-bell-slash"
+                  - else
+                    | リマインド: #{supplement.remind}(#{supplement.remind_date})
               .item-row
-                | 1日の摂取量: #{supplement.daily_intake}
-                - if supplement.supplement_type == "tablet"
-                  | (錠)
-                - elsif supplement.supplement_type == "powder"
-                  | (g)
-              item-rows.supplement-btns
+                .supplement-info
+                  | 1日の摂取量: #{supplement.daily_intake}
+                  - if supplement.supplement_type == "tablet"
+                    | (錠)
+                  - elsif supplement.supplement_type == "powder"
+                    | (g)
+              .item-rows.supplement-btns
                 = link_to edit_supplement_path(supplement), class: 'btn btn-supplement-edit' do
                   i class="fas fa-wrench"
-                  |  編集
+                  |  内容変更
                 = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-supplement-destroy' do
-                  i class="fas fa-trash"
                   |  削除
+  .btn-position
+    = link_to new_supplement_path, class: 'btn btn-supplement-add' do
+      i class="fas fa-plus-circle"
+      | サプリメント追加
