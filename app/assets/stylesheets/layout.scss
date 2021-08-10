@@ -10,7 +10,7 @@ header{
   height: 60px;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  margin: 0 10px;
 }
 
 nav{
@@ -54,8 +54,8 @@ ul#error_explanation{
 }
 
 .nav-item{
+  margin-left: 10px;
   white-space: nowrap;
-  margin: 0 8px;
 }
 
 .error-container{
@@ -121,7 +121,8 @@ ul#error_explanation{
   }
 
   .nav-item{
-    font-size: 12px;
+    font-size: 11px;
+    margin-left: 7.5px;
   }
 
   .error-container{
