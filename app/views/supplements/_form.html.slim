@@ -13,14 +13,12 @@
     .form-item
       = f.label :supplement_type, 'サプリメントタイプ'
       .form-check
-        = f.radio_button 'supplement_type', 'tablet', checked: true
-        = f.label '錠剤(錠)'
+        = f.radio_button :supplement_type, :tablet, checked: true, id: 'tablet'
+        = f.label '錠剤(錠)', for: 'tablet'
       .form-check
-        = f.radio_button 'supplement_type', 'powder'
-        = f.label '粉類(g)'
+        = f.radio_button :supplement_type, :powder, id: 'powder'
+        = f.label '粉類(g)', for: 'powder'
     .form-item
-      .confirmation-text
-        | ＊内容量の自動更新のタイミングは午前0時です
       .form-label
         - if request.path == '/supplements/new'
           = f.label :content_size, '内容量'
@@ -28,19 +26,21 @@
             = f.label :content_size, '内容量(残量にたして入力してください)'
       .form-number-input
         = f.number_field :content_size, id: 'content_size', class: 'form-control'
+      .confirmation-text
+        | ＊ 内容量の自動更新のタイミングは午前0時です
     .form-item
       .form-label
         = f.label :daily_intake, '1日あたりの摂取量'
       .form-number-input
         = f.number_field :daily_intake, id: 'daily_intake', class: 'form-control'
     .form-item
-      .confirmation-text
-        | ＊リマインドメールはリマインド日の午前9時に送信されます
       .form-label
         = f.label :remind, 'リマインド'
       .form-select-tab
         = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
+      .confirmation-text
+        | ＊ リマインドメールはリマインド日の午前9時に送信されます
     .btn-position
       =f.submit nil, class: 'btn form-btn create-btn' do
-.btn-position
-  = link_to 'キャンセル', supplements_path, class: 'btn form-btn cansel-btn'
+    .btn-position
+      = link_to 'キャンセル', supplements_path, class: 'btn form-btn cansel-btn'

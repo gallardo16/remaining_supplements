@@ -24,6 +24,7 @@
 .login-btn{
   color: #FFF;
   background: #1E90FF;
+  border: 1px solid #1d81e2;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -62,8 +63,13 @@
     width: 100%;
   }
 
+  .create-btn,
+  .login-btn{
+    font-size: 18px;
+  }
+
   .update-btn,
   .send-mail-btn{
-    font-size: 16px;
+    font-size: 18px;
   }
 }

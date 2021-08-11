@@ -1,5 +1,11 @@
 .confirmation-text{
   color: #0000CC;
-  font-size: 12px;
-  margin-left: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (max-width: 767.98px) {
+ .confirmation-text{
+    font-size: 12px;
+  }
 }
