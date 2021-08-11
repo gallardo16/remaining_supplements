@@ -51,11 +51,11 @@
                     | (g)
               .item-rows.supplement-btns
                 = link_to edit_supplement_path(supplement), class: 'btn btn-supplement-edit' do
-                  i class="fas fa-wrench"
+                  i class="fas fa-pen"
                   |  内容変更
                 = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-supplement-destroy' do
-                  |  削除
+                  | 削除
   .btn-position
     = link_to new_supplement_path, class: 'btn btn-supplement-add' do
       i class="fas fa-plus-circle"
-      | サプリメント追加
+      |  サプリメント追加
