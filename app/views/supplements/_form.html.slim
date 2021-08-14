@@ -12,12 +12,13 @@
         = f.text_field :name, id: 'name', class: 'form-control'
     .form-item
       = f.label :supplement_type, 'サプリメントタイプ'
-      .form-check
-        = f.radio_button :supplement_type, :tablet, checked: true, id: 'tablet'
-        = f.label '錠剤(錠)', for: 'tablet'
-      .form-check
-        = f.radio_button :supplement_type, :powder, id: 'powder'
-        = f.label '粉類(g)', for: 'powder'
+      .form-radio-item
+        .form-check.radio-item
+          = f.radio_button :supplement_type, :tablet, checked: true, id: 'tablet'
+          = f.label '錠剤(錠)', for: 'tablet'
+        .form-check.radio-item
+          = f.radio_button :supplement_type, :powder, id: 'powder'
+          = f.label '粉類(g)', for: 'powder'
     .form-item
       .form-label
         - if request.path == '/supplements/new'

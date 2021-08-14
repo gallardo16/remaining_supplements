@@ -1,3 +1,14 @@
+.form-radio-item{
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-item{
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
 .confirmation-text{
   color: #0000CC;
   font-size: 14px;
