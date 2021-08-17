@@ -1,16 +1,16 @@
 body{
   position: relative;
   min-height: 100vh;
-  padding-bottom: 60px;
+  padding-bottom: 64px;
   box-sizing: border-box;
   background: #FFF;
 }
 
 header{
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 16px;
 }
 
 nav{
@@ -28,11 +28,7 @@ ul#error_explanation{
 }
 
 .main-items{
-  margin: 0 10px;
-}
-
-.error-word{
-  font-size: 12px;
+  margin: 0 16px;
 }
 
 .nav-container{
@@ -54,51 +50,46 @@ ul#error_explanation{
 }
 
 .nav-item{
-  margin-left: 10px;
+  margin-left: 16px;
   white-space: nowrap;
   text-decoration: none;
 }
 
 .error-container{
-  margin: 15px 0;
-  padding: 10px;
+  margin: 16px 0;
+  padding: 16px;
   color: #B22222;
   background: #FFF0F5;
   border: 1px solid #FF1493;
 }
 
-.footer-items{
+.footer-lows{
   display: flex;
   justify-content: center;
-  font-size: 12px;
+  margin-top: 16px;
 }
 
-.footer-item{
-  margin: 0 10px;
+.footer-low{
+  margin: 0 16px;
 }
 
+.footer-text,
 .copyright-item{
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  text-decoration: none;
 }
 
 .doc-headline{
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
-.doc-desc{
-  font-size: 12px;
-}
-
+.doc-desc,
 .doc-list{
+  margin-top: 8px;
   font-size: 12px;
-  padding:  10px 20px;
 }
 
 .back-link{
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 @media (min-width: 768px) {
@@ -110,15 +101,15 @@ ul#error_explanation{
 
 @media (max-width: 767.98px) {
   header{
-    height: 40px;
+    height: 48px;
   }
 
   .main-items{
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
 
   .app-name{
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .nav-items{
@@ -126,12 +117,33 @@ ul#error_explanation{
   }
 
   .nav-item{
-    font-size: 11px;
-    margin-left: 7.5px;
+    font-size: 12px;
+    margin-left: 8px;
   }
 
   .error-container{
-    margin: 10px 0;
-    padding: 5px;
+    margin: 16px 0;
+    padding: 8px;
+  }
+
+  .error-word,
+  .footer-text,
+  .copyright-item{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 300px) {
+  header{
+    height: 40px;
+  }
+
+  .app-name{
+    font-size: 20px;
+  }
+
+  .nav-item{
+    font-size: 8px;
+    margin-left: 8px;
   }
 }

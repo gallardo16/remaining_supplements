@@ -6,65 +6,35 @@
 }
 
 .welcome-title{
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .welcome-sentence,
 .empty-sentence,{
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 16px;
 }
 
 .supplements-empty{
-  margin: 50px 0;
-  padding: 20px;
+  margin: 56px 0;
+  padding: 24px;
   border: 3px dashed #1E90FF;
   border-radius: 10px;
 }
 
-.supplements-list{
-  width: 100%;
-  margin: 30px auto;
-  border: 1px solid #555;
-}
-
 .supplement-item{
-  border-bottom: 1px solid #CCC;
-}
-
-.supplement-item:last-child{
-  border-bottom: none;
+  width: 100%;
+  margin: 16px auto;
+  border: 1px solid #888;
 }
 
 .supplement-name{
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .supplement-info{
-  font-size: 17.5px;
-}
-
-.supplement-btns{
-  display: flex;
-  margin-top: 10px;
-}
-
-.btn-supplement-edit{
-  color: #111;
-  flex-basis: 384px;
-  font-size: 18px;
-  border: 1px solid #AAA;
-}
-
-.btn-supplement-destroy{
-  color: #FF3300;
-  font-size: 18px;
-  border: 1px solid #AAA;
-  margin-left: 20px;
-}
-
-.btn-supplement-destroy:hover{
-  color: #FF3300;
+  font-size: 16px;
 }
 
 .acd-check{
@@ -73,7 +43,7 @@
 
 .acd-label{
   display: block;
-  padding: 10px;
+  padding: 16px;
   margin-bottom: 0;
   position: relative;
 }
@@ -90,14 +60,15 @@
   font-size: 40px;
   font-weight: 900;
   height: 100%;
-  width: 85px;
+  width: 80px;
   right: 0;
   top: 0px;
   border-left: 1px solid #DDD;
 }
 
 .acd-content{
-  background: #fff;
+  display: flex;
+  align-items: center;
   border-top: 1px dashed #AAA;
   height: 0;
   opacity: 0;
@@ -109,22 +80,60 @@
 }
 
 .acd-check:checked + .acd-label + .acd-content{
-  height: 150px;
+  height: 160px;
   opacity: 1;
-  padding: 10px;
   visibility: visible;
 }
 
-.btn-supplement-add {
-  color: #FFF;
-  background: #1E90FF;
-  font-size: 20px;
-  font-weight: 600;
+.item-rows{
+  flex-basis: 654px;
+  padding: 16px;
+}
+
+.supplement-btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 16px;
+}
+
+.btn-supplement-edit{
+  color: #111;
+  flex-basis: 50%;
+  border: 1px solid #AAA;
+}
+
+.btn-supplement-destroy{
+  color: #888;
+}
+
+.btn-supplement-destroy:hover{
+  color: red;
+}
+
+.btn-position-add{
+  position: fixed;
+  right: 0;
+  bottom: 0;
   text-align: center;
-  width: 384px;
-  margin: 30px auto;
-  border: 1px solid #0d73d6;
-  border-radius: 5px;
+}
+
+.btn-supplement-add{
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #FFF;
+  background: #d819c7;
+  width: 80px;
+  height: 80px;
+  margin: 16px;
+  border: 1px solid #c73cbb;
+  border-radius: 50px;
+}
+
+.add-btn-items{
+  display: flex;
+  flex-direction: column;
 }
 
 .btn-supplement-add:hover {
@@ -140,8 +149,18 @@
     font-size: 16px;
   }
 
+  .acd-label{
+    padding: 8px;
+  }
+
+  .item-rows{
+    flex-basis: 100%;
+    padding: 8px;
+  }
+
   .supplement-name{
     font-size: 20px;
+    font-weight: 700;
   }
 
   .supplement-info{
@@ -149,22 +168,37 @@
   }
 
   .btn-supplement-edit{
-    flex-basis: 70%;
-    font-size: 16px;
+    flex-basis: 50%;
+    font-size: 14px;
   }
 
   .btn-supplement-destroy{
-    flex-basis: 30%;
-    font-size: 16px;
-    margin-left: 10px;
+    font-size: 14px;
   }
 
   .acd-label:after{
-    width: 70px;
+    width: 64px;
+  }
+
+  .btn-position-add{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-align: center;
   }
 
   .btn-supplement-add{
+    font-size: 14px;
     font-weight: 400;
-    width: 100%;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    margin: 16px;
+    border-radius: 50px;
+  }
+
+  .add-btn-items{
+    display: flex;
+    flex-direction: column;
   }
 }

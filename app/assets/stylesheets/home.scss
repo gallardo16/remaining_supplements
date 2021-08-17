@@ -1,8 +1,8 @@
 .top-title{
   color: #1E90FF;
-  font-size: 40px;
+  font-size: 72px;
   font-family: 'Karla', sans-serif;
-  margin: 45px 0;
+  margin: 56px 0;
 }
 
 .home-description-sentence{
@@ -10,33 +10,38 @@
 }
 
 .user-create-btn{
+  color: #FFF;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   background: #d819c7;
   border-radius: 5px;
-  color: #FFF;
-  font-size: 20px;
-  margin: 45px 0;
+  margin: 56px 0;
 }
 
 .user-create-btn:hover{
   color: #FFF;
-  text-decoration: none;
 }
 
 .home-icon-items{
+  color: #1E90EF;
   display: flex;
   justify-content: space-around;
-  margin-top: 90px;
-  color: #1E90EF;
+  margin: 56px 0;
 }
 
 @media (max-width: 767.98px) {
+  .top-title{
+    font-size: 48px;
+    margin: 40px 0;
+  }
+
   .home-description-sentence{
     font-size: 16px;
   }
 
   .user-create-btn{
     font-size: 16px;
+    margin: 40px 0;
   }
 }

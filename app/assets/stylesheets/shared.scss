@@ -1,8 +1,8 @@
 .page-title{
-  color: #FFF;
-  font-size: 22px;
+ color: #FFF;
+  font-size: 20px;
   background: #1E90FF;
-  line-height: 32px;
+  line-height: 40px;
 }
 
 .icon-position-center,
@@ -12,14 +12,15 @@
 
 @media (min-width: 768px) {
   .page-title{
-    margin: 0 10px;
+    padding-left: 8px;
+    margin: 0 16px;
   }
 }
 
 @media (max-width: 767.98px) {
   .page-title{
     font-size: 16px;
-    line-height: 26px;
-    padding-left: 10px;
+    line-height: 32px;
+    padding-left: 16px;
   }
 }
