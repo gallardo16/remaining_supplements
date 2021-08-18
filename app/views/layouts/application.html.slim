@@ -14,10 +14,10 @@ html
   body
     - if request.path != '/home' && request.path != '/'
       = render 'layouts/header'
-    .container
+    .page
       - if flash.notice.present?
         .alert.alert-success = flash.notice
       - if flash.alert.present?
         .alert.alert-warning = flash.alert
-    = yield
-    = render 'layouts/footer'
+      = yield
+      = render 'layouts/footer'

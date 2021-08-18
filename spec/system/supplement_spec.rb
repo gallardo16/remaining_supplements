@@ -74,14 +74,6 @@ RSpec.describe "サプリメント管理機能", type: :system do
         expect(page).to have_content "1日あたりの摂取量を入力してください"
       end
 
-      #      it 'リマインドがない場合は、無効である' do
-      #        fill_in 'name', with: 'barbar'
-      #        fill_in 'content_size', with: 1000
-      #        fill_in 'daily_intake', with: 50
-      #        click_button '登録する'
-      #        expect(page).to have_content 'Please select an item in the list.'
-      #     end
-
       it "内容量 >= 1日の摂取量でない場合は、無効である" do
         fill_in "name", with: "barbar"
         fill_in "content_size", with: 10

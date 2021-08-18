@@ -48,14 +48,16 @@
                   | (錠)
                 - elsif supplement.supplement_type == "powder"
                   | (g)
-            .supplement-btns
+          .supplement-btns
+            .btn-supplement-edit-item
               = link_to edit_supplement_path(supplement), class: 'btn btn-supplement-edit' do
                 i class="fas fa-pen"
                 |  内容変更
-              = link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn-supplement-destroy' do
-                | 削除する
-  .btn-position.btn-position-add
+            .btn-supplement-destroy-item
+              =link_to supplement_path(supplement), method: :delete, data: { confirm: "サプリメント「#{supplement.name}」を削除します。"}, class: 'btn btn-supplement-destroy' do
+                i class="fas fa-trash"
+  .btn-position-add
     = link_to new_supplement_path, class: 'btn btn-supplement-add' do
       .add-btn-items
-        | 追加 
+        | 追加
         i class="fas fa-pills fa-2x"
