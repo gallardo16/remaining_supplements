@@ -2,7 +2,7 @@
   | サプリメントリスト
 .main-items
   - if flash[:notice] == "アカウント登録が完了しました。"
-    section.welcome-content.text-position-center
+    section.welcome-content.is-centered
       strong.welcome-title
         | ご登録ありがとうございます！
       p.welcome-sentence
@@ -10,10 +10,9 @@
       p.welcome-sentence
         | 「サプリメント追加」を押してください！
   - if @supplements.empty? && flash[:notice] != "アカウント登録が完了しました。"
-    .supplements-empty
-      .icon-position-center
-        i class="far fa-flushed fa-4x"
-      .empty-sentence.text-position-center
+    .supplements-empty.is-centered
+      i class="far fa-flushed fa-4x"
+      .empty-sentence.is-centered
         | サプリメントは登録されていません！
   - if @supplements.exists?
     - @supplements.each do |supplement|
