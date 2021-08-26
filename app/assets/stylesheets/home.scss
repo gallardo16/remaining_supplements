@@ -1,47 +1,76 @@
-.top-title{
-  color: #1E90FF;
+.home-header {
   font-size: 72px;
-  font-family: 'Karla', sans-serif;
-  margin: 56px 0;
+  padding-top: .75em;
+  margin-bottom: .5em;
+  line-height: 1;
+  @media (max-width: 767.98px) {
+    font-size: 58px;
+  }
 }
 
-.home-description-sentence{
+.home-site-name{
+  color: #1E90FF;
+  font-family: 'Karla', sans-serif;
+}
+
+.home-title {
+  font-size: .25em;
+  line-height: 1.4;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.home-description{
   font-size: 20px;
+  @media (max-width: 767.98px) {
+    font-size: 16px;
+  }
+  p {
+    line-height: 1.5;
+  }
+}
+
+.home-actions {
+  font-size: 20px;
+  margin-top: 2em;
+  @media (max-width: 767.98px) {
+    font-size: 16px;
+  }
 }
 
 .user-create-btn{
-  color: #FFF;
-  font-size: 20px;
+  height: 3em;
+  font-size: 1em;
+  font-weight: 700;
+  color: #fff;
   display: flex;
+  align-items: center;
   justify-content: center;
-  background: #d819c7;
+  background: #f53896;
   border-radius: 5px;
-  margin: 56px 0;
+  margin: 0 auto 1em;
+  width: 380px;
+  @media (max-width: 767.98px) {
+    font-size: 16px;
+    width: 100%;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #d41e92;
+  }
 }
 
-.user-create-btn:hover{
-  color: #FFF;
-}
-
-.home-icon-items{
-  color: #1E90EF;
-  display: flex;
-  justify-content: space-around;
-  margin: 56px 0;
+.home-actions__action {
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+  &.is-login {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 767.98px) {
-  .top-title{
-    font-size: 48px;
-    margin: 40px 0;
-  }
-
   .home-description-sentence{
     font-size: 16px;
-  }
-
-  .user-create-btn{
-    font-size: 16px;
-    margin: 40px 0;
   }
 }

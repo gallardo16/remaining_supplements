@@ -1,44 +1,15 @@
-.link-items,
-.under-link-item{
-  margin: 48px 0;
-}
-
-.link-item{
-  margin-top: 24px;
-}
-
 .danger-items{
-  margin: 80px 0;
-  border: 1px dotted #BBB;
-  border-radius: 5px;
+  margin-top: 68px;
+  text-align: center;
 }
 
-.danger-title{
-  font-size: 20px;
-  color: #FFF;
-  background-color: red;
-  border-radius: 5px 5px 0 0;
-  padding: 8px;
-}
 
-.destroy-items{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 16px;
-}
-
-.destroy-desc{
-  padding-right: 16px;
-}
-
-.destroy-btn{
-  margin: 16px 0;
+.danger-items__link {
   color: red;
-  background-color: #FFF;
-  border: 1px solid #999;
 }
 
-.destroy-btn:hover{
-  color: red;
+.danger-items__description {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
 }

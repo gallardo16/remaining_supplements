@@ -1,18 +1,26 @@
-.form-radio-item{
+.form-radio-items{
   display: flex;
-  flex-direction: column;
+  margin: 0 -8px;
 }
 
-.radio-item{
+.radio-item {
+  padding: 0 8px;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  margin-top: 8px;
+  cursor: pointer;
+  * {
+    cursor: pointer;
+  }
+  input {
+    margin-right: 6px;
+  }
 }
 
 .confirmation-text{
-  color: #0000CC;
-  font-size: 16px;
-  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 6px;
 }
 
 @media (max-width: 767.98px) {

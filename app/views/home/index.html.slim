@@ -1,22 +1,35 @@
-.main-items
-  .top-title.is-centered
-    | Resupple
-  section.is-centered
-    p.home-description-sentence
-      | サプリを毎日定量摂取している人向けの残量とリマインドを管理するサービス！
-    p.home-description-sentence
-      | サプリの内容量と1日あたりの摂取量を設定するだけで残量を毎日自動更新！
-    p.home-description-sentence
-      | 残量となくなる日が一目瞭然！
-      br
-      | リマインドも設定可能！
-  = link_to new_user_registration_path, class: 'btn user-create-btn'
-    | アカウントを作成して始める
-  = link_to new_user_session_path
-    | ログインはこちら
+- content_for(:header, 'no')
 
-  .home-icon-items
-    i class="fas fa-list-ol fa-3x"
-    i class="fas fa-user-clock fa-3x"
-    i class="far fa-envelope fa-3x"
-    i class="far fa-smile fa-3x"
+article.main-items
+  header.home-header
+    .container
+      .home-site-name.is-centered
+        | Resupple
+      h1.home-title.is-centered
+        | サプリの残量が少なくなったら
+        br
+        | 自動でお知らせ
+  .home-body
+    .home-description.is-centered
+      p
+        | サプリの内容量と
+        br.is-hidden-pc
+        | 1日あたりの摂取量を
+        br
+        | 設定するだけで
+        br.is-hidden-pc
+        | 残量を毎日自動更新します。
+
+      //
+        p
+          | 残量となくなる日が一目瞭然！
+          br
+          | リマインドも設定可能！
+  .home-actions
+    .container
+      .home-actions__action
+        = link_to new_user_registration_path, class: 'btn user-create-btn'
+          | アカウント登録する
+      .home-actions__action.is-centered.is-login
+        = link_to new_user_session_path
+          | ログインはこちら
