@@ -1,13 +1,25 @@
-.page-title
-  | 認証メール送信
+- content_for(:header, 'no')
+
+header.auth-header
+  .container
+    .auth-header__logo
+      = link_to supplements_path, class: 'auth-header__site-name' do
+        i.fas.fa-pills
+        | Resupple
+    h1.auth-header__title.is-centered
+      | パスワード再発行
 .main-items
-  .form-items
-    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-      = render "devise/shared/error_messages", resource: resource
-      .form-item
-        = f.label :email
-        .form-email-input
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-      .btn-position
-        = f.submit "送信する", class: 'btn form-btn send-mail-btn'
-    = render "devise/shared/links"
+  .container.is-sm
+    .card
+      .card-body
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          .form-items
+            = render "devise/shared/error_messages", resource: resource
+            .form-item
+              = f.label :email, class: 'form-label'
+              .form-email-input
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+          .form-actions
+            .form-actions__item
+              = f.submit "送信する", class: 'btn form-btn send-mail-btn'
+          = render "devise/shared/links"

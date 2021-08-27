@@ -1,26 +1,60 @@
-.page-title{
-  color: #FFF;
-  font-size: 20px;
-  background: #1E90FF;
-  line-height: 40px;
+html body {
+  color: #4c5a67;
 }
 
-.icon-position-center,
-.text-position-center{
-  text-align: center;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-@media (min-width: 768px) {
-  .page-title{
-    padding-left: 8px;
-    margin: 0 16px;
+.wrapper__start {
+  flex: 1;
+}
+
+.container {
+  width: 768px;
+  max-width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+  &.is-sm {
+    width: 480px;
   }
 }
 
-@media (max-width: 767.98px) {
-  .page-title{
-    font-size: 16px;
-    line-height: 32px;
-    padding-left: 16px;
+.page-header {
+  background-color: #dee3e6;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  @media (max-width: 767.98px) {
+    height: 56px;
+  }
+}
+
+.page-header__title {
+  text-align: center;
+  color: #596c77;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 22px;
+  @media (max-width: 767.98px) {
+    font-size: 18px;
+  }
+}
+
+.is-centered {
+  text-align: center;
+}
+
+.is-hidden-mobile {
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+}
+
+.is-hidden-pc {
+  @media (min-width: 768px) {
+    display: none;
   }
 }

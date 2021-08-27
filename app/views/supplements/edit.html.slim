@@ -1,4 +1,7 @@
-.page-title
-  | サプリメント編集
+.page-header
+  .container
+    h1.page-header__title
+      | サプリメント編集
 .main-items
-  = render partial: 'form', locals: { supplement: @supplement }
+  .container.is-sm
+    = render partial: 'form', locals: { supplement: @supplement }

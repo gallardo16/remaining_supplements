@@ -1,19 +1,33 @@
-header
-  nav
-    .nav-container
+header.header
+  .container
+    nav.nav-container
       .app-name-container
         - if user_signed_in?
-          = link_to "Resupple", supplements_path, class: 'app-name'
+          = link_to supplements_path, class: 'app-name' do
+            i.fas.fa-pills
+            | Resupple
         - else
-          = link_to "Resupple", home_path, class: 'app-name'
+          = link_to home_path, class: 'app-name' do
+            i.fas.fa-pills
+            | Resupple
       .nav-items
-        - if user_signed_in?
-          = link_to  edit_user_registration_path, class: 'nav-item' do
-            | プロフィール変更
-          = link_to destroy_user_session_path, method: :delete, class: 'nav-item' do
-            | ログアウト
-        - else
-          = link_to new_user_registration_path, class: 'nav-item' do
-            | アカウント登録
-          = link_to new_user_session_path, class: 'nav-item' do
-            | ログイン
+        label.nav-items__trigger for='aaa'
+          i.fas.fa-bars
+        input#aaa type='checkbox'
+        .nav-items__inner
+          .nav-items__items
+            - if user_signed_in?
+              .nav-items__item
+                = link_to  edit_user_registration_path, class: 'nav-items__item-link' do
+                  | 登録情報変更
+              .nav-items__item
+                = link_to destroy_user_session_path, method: :delete, class: 'nav-items__item-link' do
+                  | ログアウト
+            - else
+              .nav-items__item
+                = link_to new_user_registration_path, class: 'nav-items__item-link' do
+                  | アカウント登録
+              .nav-items__item
+                = link_to new_user_session_path, class: 'nav-items__item-link' do
+                  | ログイン
+          label.nav-items__overlay for='aaa'

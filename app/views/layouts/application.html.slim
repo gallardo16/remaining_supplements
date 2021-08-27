@@ -12,12 +12,17 @@ html
     meta content="width=device-width,initial-scale=1" name="viewport"
     script src="https://kit.fontawesome.com/aa99e80b9b.js" crossorigin="anonymous"
   body
-    - if request.path != '/home' && request.path != '/'
-      = render 'layouts/header'
-    .page
-      - if flash.notice.present?
-        .alert.alert-success = flash.notice
-      - if flash.alert.present?
-        .alert.alert-warning = flash.alert
-      = yield
-      = render 'layouts/footer'
+    .wrapper
+      .wrapper__start
+        - unless yield(:header) == 'no'
+          = render 'layouts/header'
+        .page
+          - if flash.notice.present?
+            .container
+              .alert.alert-success = flash.notice
+          - if flash.alert.present?
+            .container
+              .alert.alert-warning = flash.alert
+          = yield
+      .wrapper__end
+        = render 'layouts/footer'

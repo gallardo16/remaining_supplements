@@ -1,18 +1,30 @@
-.page-title
-  | パスワード変更
+- content_for(:header, 'no')
+
+header.auth-header
+  .container
+    .auth-header__logo
+      = link_to supplements_path, class: 'auth-header__site-name' do
+        i.fas.fa-pills
+        | Resupple
+    h1.auth-header__title.is-centered
+      | パスワード変更
 .main-items
-  .form-items
-    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-      = render "devise/shared/error_messages", resource: resource
-      = f.hidden_field :reset_password_token
-      .form-item
-        = f.label :password, '新しいパスワード(6文字以上)'
-        .form-password-input
-          = f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'form-control'
-      .form-item
-        = f.label :password_confirmation, '新しいパスワード(確認用)'
-        .form-password-input
-          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
-      .btn-position
-        = f.submit '変更する', class: 'btn form-btn update-btn'
-  = render "devise/shared/links"
+  .container.is-sm
+    .card
+      .card-body
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          = f.hidden_field :reset_password_token
+          .form-items
+            .form-item
+              = f.label :password, '新しいパスワード(6文字以上)', class: 'form-label'
+              .form-password-input
+                = f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'form-control'
+            .form-item
+              = f.label :password_confirmation, '新しいパスワード(確認用)', class: 'form-label'
+              .form-password-input
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+            .form-actions
+              .form-actions__item
+                = f.submit '変更する', class: 'btn form-btn update-btn'
+        = render "devise/shared/links"

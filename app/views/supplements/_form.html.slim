@@ -1,47 +1,41 @@
-.form-items
-  - if supplement.errors.present?
-    ul#error_explanation.error-container
-      - supplement.errors.full_messages.each do |message|
-        .error-word
-          li= message
-  = form_with model: supplement, local: true do |f|
+- if supplement.errors.present?
+  ul#error_explanation.error-container
+    - supplement.errors.full_messages.each do |message|
+      .error-word
+        li= message
+= form_with model: supplement, local: true do |f|
+  .form-items
     .form-item
-      .form-label
-        = f.label :name, 'サプリ名'
-      .form-name-input
+        = f.label :name, 'サプリ名', class: 'form-label'
         = f.text_field :name, id: 'name', class: 'form-control'
     .form-item
-      = f.label :supplement_type, 'サプリメントタイプ'
-      .form-radio-item
-        .form-check.radio-item
+      = f.label :supplement_type, 'サプリメントタイプ', class: 'form-label'
+      .form-radio-items
+        .radio-item
           = f.radio_button :supplement_type, :tablet, checked: true, id: 'tablet'
           = f.label '錠剤(錠)', for: 'tablet'
-        .form-check.radio-item
+        .radio-item
           = f.radio_button :supplement_type, :powder, id: 'powder'
           = f.label '粉類(g)', for: 'powder'
     .form-item
-      .form-label
-        - if request.path == '/supplements/new'
-          = f.label :content_size, '内容量'
-        - else
-            = f.label :content_size, '内容量(残量にたして入力してください)'
-      .form-number-input
-        = f.number_field :content_size, id: 'content_size', class: 'form-control'
+      - if request.path == '/supplements/new'
+        = f.label :content_size, '内容量', class: 'form-label'
+      - else
+          = f.label :content_size, '内容量(残量にたして入力してください)', class: 'form-label'
+      = f.number_field :content_size, id: 'content_size', class: 'form-control'
       .confirmation-text
         | ＊ 内容量の自動更新のタイミングは午前0時です
     .form-item
-      .form-label
-        = f.label :daily_intake, '1日あたりの摂取量'
-      .form-number-input
-        = f.number_field :daily_intake, id: 'daily_intake', class: 'form-control'
+      = f.label :daily_intake, '1日あたりの摂取量', class: 'form-label'
+      = f.number_field :daily_intake, id: 'daily_intake', class: 'form-control'
     .form-item
-      .form-label
-        = f.label :remind, 'リマインド'
-      .form-select-tab
-        = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
-      .confirmation-text
-        | ＊ リマインドメールはリマインド日の午前9時に送信されます
-    .btn-position
-      =f.submit nil, class: 'btn form-btn create-btn' do
-    .btn-position
+      = f.label :remind, 'リマインド', class: 'form-label'
+    .form-select-tab
+      = f.select :remind, { 'リマインドなし':  'リマインドなし', '1日前': '1日前', '2日前': '2日前', '3日前': '3日前', '5日前': '5日前', '1週間前': '1週間前', '10日前': '10日前', '2週間前': '2週間前' }, { include_blank: '選択してください'}, { class: 'form-control' , required: true }
+    .confirmation-text
+      | ＊ リマインドメールはリマインド日の午前9時に送信されます
+  .form-actions
+    .form-actions__item
+      = f.submit nil, class: 'btn form-btn create-btn' do
+    .form-actions__item
       = link_to 'キャンセル', supplements_path, class: 'btn form-btn cansel-btn'
