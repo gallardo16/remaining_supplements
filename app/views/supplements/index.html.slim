@@ -1,7 +1,7 @@
-/.page-header
-/  .container
-/    h1.page-header__title
-/      | サプリメントリスト
+.page-header
+  .container
+    h1.page-header__title
+      | サプリメントリスト
 .main-items
   .container
     - if flash[:notice] == "アカウント登録が完了しました。"
@@ -66,4 +66,4 @@
         | 追加
 
 
-  = javascript_pack_tag 'supplements'
+= javascript_pack_tag 'hello_vue'

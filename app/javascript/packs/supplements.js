@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     render: h => h(Supplements)
   }).$mount()
-  document.body.appendChild(app.$el)
+  document.body.appendChild(supplements-list.$el)
 
   console.log(app)
 })

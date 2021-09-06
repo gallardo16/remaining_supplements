@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="supplements-list">
   <div class="page-header">
     <div class="container">
       <h1 class="page-header__title">サプリメントリスト</h1>

@@ -35,7 +35,7 @@
               <div class="supplement-info">
                 {{ 1日の摂取量: ${supplement.daily_intake} }}
                 <div v-if="supplementType === 'tablet'">(錠)</div>
-                <div v-else>(g) </div>
+                <div v-else>(g)</div>
               </div>
             </div>
           </div>
