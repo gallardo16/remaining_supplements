@@ -15,18 +15,19 @@ RSpec.describe "サプリメント管理機能", type: :system do
         expect(page).to have_content "foo"
       end
 
-      it "アコーディングメニューを開ける" do
-        find(".acd-label").click
+      it "アコーディオンメニューを開ける" do
+        find(".js-accordion").click
         expect(page).to have_content "なくなる日"
         expect(page).to have_content "リマインド"
         expect(page).to have_content "1日の摂取量"
       end
 
       it "サプリメントがない場合は文言が表示される" do
-        find(".acd-label").click
-        click_on "削除"
+        find(".js-accordion").click
+        click_on "内容変更"
+        find('.fa-trash').click
         page.driver.browser.switch_to.alert.accept
-        expect(page).to have_content "サプリメントはありません"
+        expect(page).to have_content "サプリメントは登録されていません！"
       end
     end
   end
@@ -106,8 +107,8 @@ RSpec.describe "サプリメント管理機能", type: :system do
   describe "サプリメント更新" do
     before do
       visit supplements_path
-      find(".acd-label").click
-      click_on "編集"
+      find(".js-accordion").click
+      click_on "内容変更"
     end
     context "入力値が正しい場合" do
       it "サプリメントを更新できる" do
