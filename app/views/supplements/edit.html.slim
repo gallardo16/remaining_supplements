@@ -5,3 +5,7 @@
 .main-items
   .container.is-sm
     = render partial: 'form', locals: { supplement: @supplement }
+    .dstroy-btn-position
+      =link_to supplement_path(@supplement), method: :delete, data: { confirm: "サプリメント「#{@supplement.name}」を削除します。"}, class: 'btn btn-supplement-destroy'
+        i class="fas fa-trash"
+

@@ -185,19 +185,22 @@
   }
 }
 
+.dstroy-btn-position{
+  display: flex;
+  justify-content: end;
+}
+
 .btn-supplement-destroy{
   height: 44px;
   width: 44px;
   display: flex;
+  margin-top: 24px;
   padding: 0;
   align-items: center;
   justify-content: center;
   color: #f53896;
   background-color: #fff;
   border: 1px solid #f53896;
-  @media (max-width: 767.98px) {
-    width: 100%;
-  }
   &:hover{
     color: #fff;
     background: #f53896;
