@@ -25,7 +25,7 @@ RSpec.describe "サプリメント管理機能", type: :system do
       it "サプリメントがない場合は文言が表示される" do
         find(".js-accordion").click
         click_on "内容変更"
-        find('.fa-trash').click
+        find(".fa-trash").click
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content "サプリメントは登録されていません！"
       end

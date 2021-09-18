@@ -89,7 +89,7 @@ RSpec.describe "ユーザ管理機能", type: :system do
       end
 
       it "アカウントを削除できる" do
-        execute_script('window.scrollBy(0,10000)')
+        execute_script("window.scrollBy(0,10000)")
         find("a", text: "アカウントを削除").click
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content "アカウントを削除しました。またのご利用をお待ちしております。"
@@ -147,7 +147,7 @@ RSpec.describe "ユーザ管理機能", type: :system do
         fill_in "email", with: "test@example.com"
         fill_in "password", with: "testtest"
         click_button "ログインする"
-        find('.nav-items').click
+        find(".nav-items").click
         find("a", text: "ログアウト").click
         expect(page).to have_content "ログアウトしました。"
       end
