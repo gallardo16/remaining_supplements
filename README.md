@@ -7,6 +7,7 @@ remaining_supplementsは、定量摂取しているサプリメントの残量�
 ## ローカルでの立ち上げ方法
 ```
 $ bundle install
+$ yarn install --check-files
 $ rails db:create
 $ rails db:migrate
 $ rails s
