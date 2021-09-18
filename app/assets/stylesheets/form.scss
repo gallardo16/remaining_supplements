@@ -147,7 +147,9 @@
 .form-actions__item {
   @media (min-width: 768px) {
     padding: 0 8px;
-    width: 50%;
+    width: 33%;
+    display: flex;
+    justify-content: end;
   }
   @media (max-width: 767.98px) {
     &:not(:first-child) {

@@ -1,73 +1,65 @@
 <template>
-<div>
-  <div class="supllement-item">
-    <input class="acd-check" id="supplementId" type="checkbox">
-      <div class="supplement-item__inner">
-        <label class="acd-label" for="supplementId">
-          <div class="item-low">
-            <div class="supplement-name">{{supplementName}}</div>
-            <div class="supplement-info">
-              <div v-if="supplementType === 'tablet'">
-                {{ 残り : ${supplementcontentsize} (錠) }}
-              </div>
-              <div v-else>
-                {{ 残り : ${supplementcontentsize} (g) }}
-              </div>
-            </div>
-          </div>
-        </label>
-        <div class="acd-content">
-          <div class="item-rows">
-            <div class="item-row">
-              <div class="supplement-info">{{ なくなる日: ${supplementEmptyDate} }}</div>
-            </div>
-            <div class="item-row">
-              <div class="supplement-info">
-                <div v-if="supplementRemindDate === null">
-                  {{ リマインド: #{supplementRemind} div> }}
-                </div>
-                <div v-else>
-                  {{リマインド: ${supplementRemind} (${supplementRemindDate) }}
-                </div>
-              </div>
-            </div>
-            <div class="item-row">
-              <div class="supplement-info">
-                {{ 1日の摂取量: ${supplement.daily_intake} }}
-                <div v-if="supplementType === 'tablet'">(錠)</div>
-                <div v-else>(g)</div>
-              </div>
-            </div>
-          </div>
-          <div class="supplement-btns">
-            <div class="btn-supplement-edit-item">
-            </div>
-            <div class="btn-supplement-destroy-item">
-            </div>
+  <div class="js-accordion" v-cloak>
+    <div>
+      <button class="js-accordion--trigger" type="button" :class="{ '_state-open': isOpened }" @click="accordionToggle()">
+        <div class="item-low">
+          <div class="supplement-name">{{ supplement.name }}</div>
+          <div class="supplement-info">
+            <div>残り : {{ supplement.content_size }}{{ supplementType }}</div>
           </div>
         </div>
+      </button>
+    </div>
+    <div class="js-accordion--target" :class="{ '_state-open': isOpened }" v-if="isOpened">
+      <div class="item-rows">
+        <div class="item-row">
+          <div class="supplement-info">なくなる日: {{ emptyDate }} </div>
+        </div>
+        <div class="item-row">
+          <div class="supplement-info">
+            <div>リマインド: {{ supplement.remind }}</div>
+          </div>
+        </div>
+        <div class="item-row">
+          <div class="supplement-info">1日の摂取量: {{ supplement.daily_intake }}{{ supplementType }}</div>
+        </div>
       </div>
-    </input>
+      <div class="supplement-btns">
+        <div class="btn-supplement-edit-item">
+          <a  class="btn btn-supplement-edit" :href='`/supplements/${supplement.id}/edit`'>内容変更</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-  data: function () {
+  props: {
+    supplement: { type: Object, required: true },
+  },
+  data() {
     return {
-      supplements: []
+      isOpened: false
     }
   },
-  mounted () {
-    axios
-      .get('/api/supplements.json')
-      .then(response => (this.supplements = response.data))
+  methods: {
+    accordionToggle: function(){
+      this.isOpened = !this.isOpened;
+    },
   },
   computed: {
-    isFirstVisit() {
-      const flashItem = document.getElementsByClassName('alert-success').textContent
-      return flashItem === 'アカウント登録が完了しました。'
+    supplementType() {
+      if (this.supplement.supplement_type === "tablet") {
+        return "(錠)"
+      } else {
+        return "(g)"
+      }
+    },
+    emptyDate() {
+      const created_dt = new Date(this.supplement.created_at)
+      const empty_dt =  new Date(created_dt.setDate(created_dt.getDate() + this.supplement.content_size / this.supplement.daily_intake))
+      return empty_dt.getFullYear() + '/' + ('0' + (empty_dt.getMonth() + 1)).slice(-2) + '/' + ('0' + empty_dt.getDate()).slice(-2)
     },
   },
 }
