@@ -17,6 +17,7 @@ jobs:
     steps:
       - checkout
       - run: gem install bundler:2.2.15
+      - run: bundle install
       - run:
           name: test
           command: bundle exec rspec
