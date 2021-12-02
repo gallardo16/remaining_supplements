@@ -17,8 +17,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Which bundler?
-          command: bundle -v
+          name: TEST
+          command: bundle exec rspec
       - ruby/bundle-install
 
 # Invoke jobs via workflows
