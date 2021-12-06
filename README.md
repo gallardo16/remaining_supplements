@@ -1,4 +1,4 @@
-#Resupple(remaining_supplements)
+# Resupple(remaining_supplements)
 
 Resuppleはサプリメントの残量とリマインドを管理するサービスです。
 
