@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: remaining_supplements_production
-  username: remaining_supplements
-  password: <%= ENV['REMAINING_SUPPLEMENTS_DATABASE_PASSWORD'] %>
+  database: resupple_app_production
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
