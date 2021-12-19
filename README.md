@@ -4,6 +4,12 @@ Resuppleはサプリメントの残量とリマインドを管理するサービ
 
 内容量と1日あたりの摂取量を設定することで、サプリメントがなくなる日がわかり、なくなる前にリマインドを設定することで買い忘れを防止してくれます。
 
+
+# URL
+http://resupple.work
+
+https://remaining-supplements.herokuapp.com (SSL)
+
 ## ローカルでの立ち上げ方法
 ```
 $ bundle install
