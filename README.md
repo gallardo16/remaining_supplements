@@ -23,7 +23,7 @@ $ rails s
 $ rails db:seed
 ```
 以下のアカウントでログインできます。
-```  
+```
 eメール: test@example.com
 パスワード: testtest
 ```
